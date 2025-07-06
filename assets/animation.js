@@ -23,18 +23,21 @@ $(document).ready(function() {
 
 
   $(document).ready(function() {
-    var numberOfStars = 200; // Number of stars
+    var numberOfStars = 200; 
 
-    // Function to create a star
     function createStar() {
-        var starLeft = Math.random() * $(window).width(); // Random horizontal position
-        var starTop = Math.random() * $(window).height(); // Random vertical position
+        var starLeft = Math.random() * $(window).width(); 
+        var starTop = Math.random() * $(window).height(); 
 
-        var starSize = Math.random() * 2; // Random size between 1 and 2px
+        if(starTop > (0.8 * $(window).height())){
+            return;
+        }
+        var starSize = Math.random() * 2; 
 
-        var starAnimationDuration = 1 + Math.random() * 0.5; // Random duration between 1 and 1.5s
+        var starAnimationDuration = 1 + Math.random() * 0.5; 
 
-        var starColor = `rgba(255, 255, 255, ${0.5 + Math.random() * 0.5})`; // Random opacity for a more natural look
+        var starColor = `rgba(255, 255, 255, ${0.5 + Math.random() * 0.5})`; 
+
 
         $('<div class="star"></div>').appendTo('.stars').css({
             left: starLeft,
@@ -46,7 +49,6 @@ $(document).ready(function() {
         });
     }
 
-    // Create stars
     for (var i = 0; i < numberOfStars; i++) {
         createStar();
     }
