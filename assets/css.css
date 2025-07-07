@@ -358,30 +358,34 @@ html[dir="rtl"] .profileImg img{
   background-size: cover;
   background-blend-mode: overlay;
   height: 150px;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 .twitter{
   background-color:#333;
   border-radius: 5px;
   padding:5px;
   flex-direction: column;
+  gap:5px;
 }
 .youtube{
   background-color:#A62103;
   border-radius: 5px;
   padding:5px;
+  gap:5px;
 }
 .linkdin{
   background-color:#0a66c2;
   border-radius: 5px;
   flex-direction: column;
   padding:5px;
+  gap:5px;
 
 }
 .codepen{
   background-color: hsl(225deg 9.52% 8.24%);
   border-radius: 5px;
   padding:5px;
+  gap:5px;
 }
 .twitch{
   background-color: rgb(136, 80, 161);
@@ -389,16 +393,35 @@ html[dir="rtl"] .profileImg img{
   height: 100%;
   flex-direction: column;
   padding:5px;
+  gap:5px;
 }
 .mystery{
   flex-direction: column;
-  background-color: rgb(136, 80, 161);
+  background-color: rgb(61, 61, 61);
   height: 100%;
   border-radius: 5px;
   padding:5px;
+  gap:5px;
 }
-
-
+.blog-mini{
+  background-color: rgb(9, 9, 9);
+  border-radius: 5px;
+  height: 100%;
+  flex-direction: column;
+  padding:15px;
+  gap:5px;
+  border:1px solid rgba(255, 255, 255, 0.2);
+}
+.blogs-brief h3 span{
+  opacity: 0.8;
+  font-size: 16px;
+  font-weight: 200;
+}
+.blogs-brief p{
+  opacity: 0.8;
+  font-size: 22px;
+  font-weight: 300;
+}
 .title_container{
   display: block;
   max-width: 800px;
