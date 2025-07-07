@@ -52,3 +52,32 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function () {
+    // Open modal on button click
+    $('#searchTrigger').on('click', function () {
+      $('#searchModal').fadeIn(150);
+      $('#searchModal input').focus();
+    });
+  
+    // Close modal on close button
+    $('#closeSearch').on('click', function () {
+      $('#searchModal').fadeOut(150);
+    });
+  
+    // Close on Esc key
+    $(document).on('keydown', function (e) {
+      if (e.key === 'Escape') {
+        $('#searchModal').fadeOut(150);
+      }
+    });
+  
+    // Ctrl + K shortcut
+    $(document).on('keydown', function (e) {
+      if (e.ctrlKey && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        $('#searchModal').fadeIn(150);
+        $('#searchModal input').focus();
+      }
+    });
+  });
+  
