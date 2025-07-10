@@ -12,6 +12,12 @@ $(document).ready(function() {
             $(currentPage).slideUp(200, function() {
                 $(currentPage).removeClass('show');
                 $(target).slideDown(400).addClass('show');
+
+                if ($(target).attr('id') === 'Blogs') {
+                    if(!loadedFlag){
+                        fetchData()
+                    }
+                }
             })
         }
 
