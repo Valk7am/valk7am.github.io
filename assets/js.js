@@ -15,7 +15,6 @@ $(document).ready(function() {
 
                 if ($(target).attr('id') === 'Blogs') {
                     if(!loadedFlag){
-                        fetchData()
                     }
                 }
             })
@@ -56,6 +55,7 @@ $(document).ready(function() {
             </div> 
         `);
     });
+    fetchData()
 });
 
 $(document).ready(function () {

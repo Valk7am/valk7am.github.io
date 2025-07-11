@@ -5,9 +5,10 @@ const limit = 8;
 const CONTENT_TYPE_ID = 'blogs';
 var loadedFlag = false; 
 var entries = [];
+var includes = [];
 
 function fetchData(){
-    fetch(`https://cdn.contentful.com/spaces/${SPACE_ID}/environments/${ENVIRONMENT_ID}/entries?limit=${limit}&include=1`, {
+    fetch(`https://cdn.contentful.com/spaces/${SPACE_ID}/environments/${ENVIRONMENT_ID}/entries?limit=${limit}`, {
         headers: {
           'Authorization': `Bearer ${ACCESS_TOKEN}`
         }
@@ -21,17 +22,21 @@ function fetchData(){
         .then(data => {
             entries = data.items;
             renderTable(entries);
+            renderFeaturedPost(data.items[0]);
             loadedFlag = true;
         })
         .catch(error => {
-            console.error('Error fetching Contentful data:', error);
             loadedFlag = true;
         });
 }
 
-fetchLatestPost()
-function fetchLatestPost(){
-    fetch(`https://cdn.contentful.com/spaces/${SPACE_ID}/environments/${ENVIRONMENT_ID}/entries?access_token=${ACCESS_TOKEN}&content_type=${CONTENT_TYPE_ID}&order=-sys.createdAt&limit=1`, {
+function fetchPost(post_Id){
+    if (!post_Id){
+      return 
+    }
+
+
+    return fetch(`https://cdn.contentful.com/spaces/${SPACE_ID}/environments/${ENVIRONMENT_ID}/entries?sys.id=${post_Id}&content_type=${CONTENT_TYPE_ID}&limit=1&include=1`, {
         headers: {
             'Authorization': `Bearer ${ACCESS_TOKEN}`
         }
@@ -43,12 +48,9 @@ function fetchLatestPost(){
         return response.json();
     })
     .then(data => {
-        console.log("Latest post fetched:", data.items[0]);
-        entries.push(data.items[0])
-        renderFeaturedPost(data.items[0])
+        return [data.items[0],data.includes]
     })
     .catch(error => {
-        console.error('Error fetching latest Contentful post:', error);
         loadedFlag = true;
     });
 }
@@ -88,15 +90,19 @@ function extractTextFromRichText(richText) {
 
     $.each(data, function (_, entry) {
       const title = entry.fields.title || 'No title';
-      const description = extractTextFromRichText(entry.fields.discription);
+      const html = renderRichTextToHTML(entry.fields.discription, entry.includes);
       const date = formatDate(entry.sys.createdAt);
 
+      const tmp = document.createElement("div");
+      tmp.innerHTML = html;
+
+      const description = tmp.textContent || tmp.innerText || "";
       const $row = $(`
         <div class="col-lg-12 col-md-12">
             <a href="#" data-id='${entry.sys.id}'>
                 <ul class="blog-link">
                     <li class="blog-title">${title}</li>
-                    <li class="blog-description">${description}</li>
+                    <li class="blog-description">${description.slice(0,50)}...</li>
                     <li class="blog-date">${date}</li>
                 </ul
             </a>
@@ -109,12 +115,12 @@ function extractTextFromRichText(richText) {
     $table.append($tbody);
     $('#table-container').html('').append($table);
   }
+  function renderFeaturedPost(entry, includes) {
+    const title = entry.fields.title || 'No title';
+    const descriptionHTML = renderRichTextToHTML(entry.fields.discription, includes);
+    const date = formatDate(entry.sys.createdAt);
 
-  function renderFeaturedPost(entry) {
-      const title = entry.fields.title || 'No title';
-      //const description = extractTextFromRichText(entry.fields.discription);
-      const date = formatDate(entry.sys.createdAt);
-      const post = $(`
+    const post = $(`
         <a href="#" data-id='${entry.sys.id}'>
             <div class="pop-out-when-in blog-mini">
                 <div class="blogs-brief">
@@ -128,47 +134,51 @@ function extractTextFromRichText(richText) {
                 </div>
             </div>
         </a>
-        `);
-        $('#featuredPost').html('').append(post);
-  }
+    `);
+
+    $('#featuredPost').html('').append(post);
+}
 
 $(document).on('click', '[data-id]', function (e) {
     e.preventDefault();
   
     const entryId = $(this).data('id');
-    const entry = entries.find(e => e.sys.id === entryId);
-    if (!entry) return;
-    console.log('entry:', entry)
-    // 1. Title
-    $('#modalTitle').text(entry.fields.title || 'Untitled');
-  
-    // 2. Rich text body
-    const html = renderRichTextToHTML(entry.fields.discription);
-    $('#modalDescription').html(html);
-  
+    if (!entryId) return;
 
-    // Resolve multiple attachments (PDFs, etc.)
-    const $attachments = $('#modal-attachments').empty();
-    const attachmentLinks = entry.fields.attachments || [];
-    const assets = resolveAssetsByIds(attachmentLinks, entries.includes); // contentfulData = whole response
-  
+    fetchPost(entryId).then(post => {
 
-    assets.forEach(asset => {
-        const file = asset.fields.file;
-        const url = file.url.startsWith('//') ? 'https:' + file.url : file.url;
-        const name = file.fileName || 'Download';
+      const entry = post[0];
+      const includes = post[1]
+  
+      // 1. Title
+      $('#modalTitle').text(entry.fields.title || 'Untitled');
     
-        $attachments.append(`
-          <a href="${url}" download target="_blank">${name}</a>
-        `);
-      });
-  
-    // 4. Show modal
-    $('.blog-modal').modal('show');
+      // 2. Rich text body
+      const html = renderRichTextToHTML(entry.fields.discription, includes);
+      $('#modalDescription').html(html);
+    
+
+      // Resolve multiple attachments (PDFs, etc.)
+      const $attachments = $('#modal-attachments').empty();
+      const attachmentLinks = entry.fields.attachments || [];
+      const assets = resolveAssetsByIds(attachmentLinks, includes);
+
+      assets.forEach(asset => {
+          const file = asset.fields.file;
+          const url = file.url.startsWith('//') ? 'https:' + file.url : file.url;
+          const name = file.fileName || 'Download';
+      
+          $attachments.append(`
+            <a href="${url}" download target="_blank">${name}</a>
+          `);
+        });
+    
+      // 4. Show modal
+      $('.blog-modal').modal('show');
+    });
 });
 
 function resolveAssetsByIds(linkArray, includes) {
-    console.log(includes)
     if (!includes?.Asset) return [];
   
     return linkArray
@@ -176,8 +186,54 @@ function resolveAssetsByIds(linkArray, includes) {
       .filter(asset => asset && asset.fields?.file);
   }
 
-function renderRichTextToHTML(richText) {
+// function renderRichTextToHTML(richText) {
+//     if (!richText || !richText.content) return '';
+  
+//     const renderNode = (node) => {
+//       switch (node.nodeType) {
+//         case 'paragraph':
+//           return `<p>${node.content.map(renderNode).join('')}</p>`;
+//         case 'heading-1':
+//           return `<h1>${node.content.map(renderNode).join('')}</h1>`;
+//         case 'heading-2':
+//           return `<h2>${node.content.map(renderNode).join('')}</h2>`;
+//         case 'heading-3':
+//           return `<h3>${node.content.map(renderNode).join('')}</h3>`;
+//         case 'text':
+//           let text = node.value;
+//           if (node.marks) {
+//             node.marks.forEach(mark => {
+//               if (mark.type === 'bold') text = `<strong>${text}</strong>`;
+//               if (mark.type === 'italic') text = `<em>${text}</em>`;
+//               if (mark.type === 'underline') text = `<u>${text}</u>`;
+//             });
+//           }
+//           return text;
+//         case 'unordered-list':
+//           return `<ul>${node.content.map(renderNode).join('')}</ul>`;
+//         case 'ordered-list':
+//           return `<ol>${node.content.map(renderNode).join('')}</ol>`;
+//         case 'list-item':
+//           return `<li>${node.content.map(renderNode).join('')}</li>`;
+//         case 'hyperlink':
+//           const url = node.data.uri;
+//           const inner = node.content.map(renderNode).join('');
+//           return `<a href="${url}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
+//         default:
+//           return ''; // Skip unknown types
+//       }
+//     };
+  
+//     return richText.content.map(renderNode).join('');
+//   }
+  
+  function renderRichTextToHTML(richText, includes = {}) {
     if (!richText || !richText.content) return '';
+  
+    const findAssetById = (id) => {
+      if (!includes.Asset) return null;
+      return includes.Asset.find(asset => asset.sys.id === id);
+    };
   
     const renderNode = (node) => {
       switch (node.nodeType) {
@@ -191,13 +247,11 @@ function renderRichTextToHTML(richText) {
           return `<h3>${node.content.map(renderNode).join('')}</h3>`;
         case 'text':
           let text = node.value;
-          if (node.marks) {
-            node.marks.forEach(mark => {
-              if (mark.type === 'bold') text = `<strong>${text}</strong>`;
-              if (mark.type === 'italic') text = `<em>${text}</em>`;
-              if (mark.type === 'underline') text = `<u>${text}</u>`;
-            });
-          }
+          node.marks.forEach(mark => {
+            if (mark.type === 'bold') text = `<strong>${text}</strong>`;
+            if (mark.type === 'italic') text = `<em>${text}</em>`;
+            if (mark.type === 'underline') text = `<u>${text}</u>`;
+          });
           return text;
         case 'unordered-list':
           return `<ul>${node.content.map(renderNode).join('')}</ul>`;
@@ -207,17 +261,40 @@ function renderRichTextToHTML(richText) {
           return `<li>${node.content.map(renderNode).join('')}</li>`;
         case 'hyperlink':
           const url = node.data.uri;
-          const inner = node.content.map(renderNode).join('');
-          return `<a href="${url}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
+          const linkText = node.content.map(renderNode).join('');
+          return `<a href="${url}" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
+        case 'embedded-asset-block': {
+            const assetId = node.data.target.sys.id;
+            const asset = findAssetById(assetId);
+            if (!asset || !asset.fields?.file?.url) return '';
+          
+            const file = asset.fields.file;
+            const url = file.url.startsWith('//') ? 'https:' + file.url : file.url;
+            const alt = asset.fields.title || file.fileName || 'Untitled file';
+            const contentType = file.contentType;
+          
+            if (contentType.startsWith('image/')) {
+              // Render image
+              return `<img src="${url}" alt="${alt}" style="max-width: 100%; margin: 1rem 0;">`;
+            } else {
+              // Render download link for other file types
+              return `
+                <div style="margin: 1rem 0;">
+                  📎 <a href="${url}" download target="_blank" style="text-decoration: underline; color: #007bff;">
+                    Download ${alt}
+                  </a>
+                </div>
+              `;
+            }
+          }
         default:
-          return ''; // Skip unknown types
+          return '';
       }
     };
   
     return richText.content.map(renderNode).join('');
   }
   
-
   const attachments = [
     { name: 'Guide.pdf', url: '/downloads/guide.pdf' },
     { name: 'Sample.zip', url: '/downloads/sample.zip' }
