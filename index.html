@@ -152,10 +152,21 @@
                             </div>        
                         </div>
                         <div class="col-lg-5 col-md-12">
-                            <video class="float-end" width="350" height="350" autoplay muted loop playsinline>
+                            <!-- <video class="float-end" width="350" height="350" autoplay muted loop playsinline>
                                 <source src="assets/images/heroAnimationFiller.webm" type="video/webm">
                                 Your browser does not support the video tag.
-                                </video>                    
+                                </video>  
+                                <div id="hero-animation"></div>    -->
+                                <!-- <lottie-player src="https://app.lottiefiles.com/share/769926e5-be6d-4fe6-b794-ca5217f4f25f" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop controls autoplay></lottie-player> -->
+                                <lottie-player
+                                    class="m-auto"
+                                    src="https://lottie.host/d3ef079e-ebfb-4cfa-8f3d-8ad904998e9c/7SB9jVaZ8T.json" 
+                                    background="transparent" 
+                                    speed="1" 
+                                    style="width: 300px; height: 300px; margin: 30px auto;" 
+                                    loop autoplay
+                                >
+                                </lottie-player>
                             </div>
                     </div>
                     
@@ -465,6 +476,7 @@
     <script src="./assets/libraries/gsap/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="./assets/animation.js"></script>
     <script src="./assets/request.js"></script>
     <script src="./assets/js.js"></script>

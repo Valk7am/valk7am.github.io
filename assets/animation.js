@@ -60,6 +60,4 @@ $(document).ready(function() {
     function clearStars() {
         $('.stars').html('')
     }
-
-    
 });
