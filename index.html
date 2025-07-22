@@ -13,670 +13,971 @@
         <link href="assets/bootstrap.css" rel="stylesheet">
         <link href="assets/css.css" rel="stylesheet">
     </head>
-<body>  
-    <div style="background-color: black;width: 100%;text-align: center;font-size: 15px; position: fixed; top: 0;z-index: 100;">This website is currently being built. piece by piece</div>
-    <div class="stars"></div>
+    <body>  
+        <div style="background-color: black;width: 100%;text-align: center;font-size: 15px; position: fixed; top: 0;z-index: 100;">
+            This website is currently being built. piece by piece
+        </div>
+        <div class="stars"></div>
 
-<div class="container">
-    <div>
-        <header>
-            <div class="container">
-                <div class="header-container">
-                    <div class="header-topside">
-                        <div class="triangle-pattern left-fade"></div>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12">
-                                <!-- <div class="d-flex">
-                                    <div class="profileImg">
-                                        <img src="assets/images/valk7amlogo.png" height="200" width="200"/>
+        <div class="container">
+            <div>
+                <header>
+                    <div class="container">
+                        <div class="header-container">
+                            <div class="header-topside">
+                                <div class="triangle-pattern left-fade"></div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <!-- <div class="d-flex">
+                                            <div class="profileImg">
+                                                <img src="assets/images/valk7amlogo.png" height="200" width="200"/>
+                                            </div>
+                                            <div>
+                                                <div class="profile-main-text">
+                                                    <h3>
+                                                        Valk7am
+                                                    </h3>
+                                                    <p>
+                                                        Developer, Gamer, and a Father 
+                                                    </p>
+                                                </div>
+                                                
+                                            </div>  
+                                        </div> -->
                                     </div>
-                                    <div>
-                                        <div class="profile-main-text">
-                                            <h3>
-                                                Valk7am
-                                            </h3>
-                                            <p>
-                                                Developer, Gamer, and a Father 
-                                            </p>
+                                    <!-- <div class="col-lg-6 col-md-12">
+                                        <div>
+                                            <div class="d-flex">
+                                                <p class="p-1">h1</p> 
+                                                <p class="p-1">h1</p>
+                                                <p class="p-1">h1</p>
+                                                <p class="p-1">h1</p>
+                                            </div>
                                         </div>
-                                        
-                                    </div>  
-                                </div> -->
+                                    </div> -->
+                                </div>
                             </div>
-                            <!-- <div class="col-lg-6 col-md-12">
-                                <div>
-                                    <div class="d-flex">
-                                        <p class="p-1">h1</p> 
-                                        <p class="p-1">h1</p>
-                                        <p class="p-1">h1</p>
-                                        <p class="p-1">h1</p>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <nav class="navbar navbar-expand-lg navbar-dark">
+                                        <div class="container-fluid">
+                                            <a class="navbar-brand" href="#">valk<span class="nickname-7">7</span>am</a>
+                                            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarViews" aria-controls="navbarViews" aria-expanded="false" aria-label="Toggle navigation">
+                                                <label class="hamburger">
+                                                    <input type="checkbox">
+                                                    <svg viewBox="0 0 32 32">
+                                                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                                                    <path class="line" d="M7 16 27 16"></path>
+                                                    </svg>
+                                                </label>
+                                            </button>
+                                            <div id="navbarViews" class="collapse navbar-collapse navigation">
+                                                <ul class="navbar-nav ms-auto py-2"> 
+                                                    <li>
+                                                        <a class="show-toggle active py-2" href="#" data-target="#Overview">
+                                                            <span>
+                                                                Overview
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="show-toggle py-2" href="about.html" data-target="#About">
+                                                            <span>
+                                                                About
+                                                            </span> 
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="show-toggle py-2" href="#" data-target="#Projects">
+                                                            <span>
+                                                                Projects
+                                                            </span> 
+                                                        </a>
+                                                    </li>                    
+                                                    <li>
+                                                        <a class="show-toggle py-2" href="#" data-target="#Blogs">
+                                                            <span>
+                                                                Blogs
+                                                            </span> 
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <div class="search">
+                                                            <!-- Search Button -->
+                                                            <button id="searchTrigger" class="search-button">
+                                                                Search...<kbd class="keyboard">Ctrl+K</kbd>
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                                
+                            </div>
+                        </div>          
+                    </div>
+                        <!-- Search Modal -->
+                        <div id="searchModal" class="search-modal" style="display:none;">
+                            <div class="search-box">
+                            <input type="text" placeholder="Type to search..." />
+                            <button id="closeSearch">✖</button>
+                            </div>
+                        </div>
+                </header>
+                <main class="container">
+                <section id="Overview" class="col-lg-12 col-md-12 show">
+                    <div clas="container">
+                        <div class="hero">
+
+                        
+                            <div class="row">
+                                <div class="col-lg-7 col-md-12 my-auto">
+                                    <div>
+                                        <h1 class="hero-name">Mahmoud Abuhassan</h1>
+                                        <div class="hero-title">
+                                            <p>
+                                                I'm a
+                                            </p>
+                                            <div class="changebox">
+                                                <span>
+                                                    Software Engineer
+                                                </span><br>
+                                                <span>
+                                                    Frontend Dev.
+                                                </span><br>
+                                                <span>
+                                                    Backend Dev.
+                                                </span><br>
+                                                <span>
+                                                    AI Specilist
+                                                </span><br>
+                                                <span>
+                                                    Father
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="title_container">
+                                        <h1>
+                                            <span class="title">Mahmoud Abuhassan</span>
+                                            <span class="title">Full Stack Developer</span>
+                                            <span class="title"></span>
+                                        </h1>
+                                    </div>  -->
+
+                                </div>
+                                <div class="col-lg-5 col-md-12">
+                                    <!-- <video class="float-end" width="350" height="350" autoplay muted loop playsinline>
+                                        <source src="assets/images/heroAnimationFiller.webm" type="video/webm">
+                                        Your browser does not support the video tag.
+                                        </video>  
+                                        <div id="hero-animation"></div>    -->
+                                        <!-- <lottie-player src="https://app.lottiefiles.com/share/769926e5-be6d-4fe6-b794-ca5217f4f25f" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop controls autoplay></lottie-player> -->
+                                        <lottie-player
+                                            class="m-auto"
+                                            src="https://lottie.host/1043ce0d-7b3f-415d-aada-29772bb64341/0NpQq3Fmy3.json" 
+                                            background="transparent" 
+                                            speed="1" 
+                                            style="width: 500px; height: 300px; margin: 30px auto;" 
+                                            loop autoplay
+                                        >
+                                        </lottie-player>
+                                    </div>
+                            </div>
+                            
+                        </div>
+                        <div class="wall">
+                            <div class="row g-2">
+                                <div class="col-lg-6 col-md-12">
+                                    <a target="_blank" href="https://github.com/Valk7am">
+                                        <div class="github-profile pop-out-when-in">
+                                            <div class="github-profile-text">
+                                            
+                                                <h4>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                                                    </svg>
+                                                    Github
+                                                </h4>
+                                                <p>
+                                                It's not about the green dots...
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div id="featuredPost">
+
                                     </div>
                                 </div>
+                                <!-- <div class="col-lg-4 col-9">
+                                    <a target="_blank" href="https://github.com/Valk7am">
+                                        <div class="github-progress pop-out-when-in">
+                                            <div class="github-progress-chart"></div>
+                                            <div class="d-flex justify-content-evenly align-items-center">
+                                                <div>
+                                                    <lebal>Stars: <span>#</span></lebal>
+                                                </div>
+                                                <div>    
+                                                    <lebal>Followers: <span>#</span></lebal>
+                                                </div>
+                                                <div>    
+                                                    <lebal>Repos: <span>#</span></lebal>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-2 col-3">
+                                    <a target="_blank" href="https://youtu.be/h8Q_J0M2HSs?t=50">
+                                        <div class="quran pop-out-when-in">
+                                            <h1>
+                                                سورة الأنسان
+                                            </h1>
+                                        </div>
+                                    </a>
+                                </div> -->
+
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="row g-1">
+                                        <div class="col-lg-2 col-md-3">
+                                            <a target="_blank" href="https://youtu.be/h8Q_J0M2HSs?t=50">
+                                                <div class="pop-out-when-in mystery social-wall flex-center">
+                                                    <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M80 160c0-35.3 28.7-64 64-64l32 0c35.3 0 64 28.7 64 64l0 3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74l0 1.4c0 17.7 14.3 32 32 32s32-14.3 32-32l0-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7l0-3.6c0-70.7-57.3-128-128-128l-32 0C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg>
+                                                    <span>Mystery</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-10 col-md-9">
+                                            <div class="row g-1">
+                                                <div class="col-3 col-lg-6 col-md-6">
+                                                    <a target="_blank" href="https://www.twitch.tv/7am7od">
+                                                        <div class="pop-out-when-in twitch social-wall flex-center">
+                                                            <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M391.2 103.5H352.5v109.7h38.6zM285 103H246.4V212.8H285zM120.8 0 24.3 91.4V420.6H140.1V512l96.5-91.4h77.3L487.7 256V0zM449.1 237.8l-77.2 73.1H294.6l-67.6 64v-64H140.1V36.6H449.1z"/></svg>
+                                                            <span>Twitch</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-3 col-lg-6 col-md-6">
+                                                    <a target="_blank" href="https://www.linkedin.com/in/mahmoud-abu-hassan-06111b235/">
+                                                        <div class="pop-out-when-in linkdin social-wall flex-center">
+                                                            <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
+                                                            <span>Linkdin</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-3 col-lg-6 col-md-6">
+                                                    <a target="_blank" href="https://www.youtube.com/@mh97-abuhassan">
+                                                        <div class="pop-out-when-in youtube social-wall flex-center">
+                                                            <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
+                                                            <span>Youtube</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-3 col-lg-6 col-md-6">
+                                                <a target="_blank" href="https://codepen.io/Mahmoud-Abu-Hassan">
+                                                    <div class="pop-out-when-in codepen social-wall flex-center">
+                                                        <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M502.3 159.7l-234-156c-8-4.9-16.5-5-24.6 0l-234 156C3.7 163.7 0 170.8 0 178v156c0 7.1 3.7 14.3 9.7 18.3l234 156c8 4.9 16.5 5 24.6 0l234-156c6-4 9.7-11.1 9.7-18.3V178c0-7.1-3.7-14.3-9.7-18.3zM278 63.1l172.3 114.9-76.9 51.4L278 165.7V63.1zm-44 0v102.6l-95.4 63.7-76.9-51.4L234 63.1zM44 219.1l55.1 36.9L44 292.8v-73.7zm190 229.7L61.7 334l76.9-51.4L234 346.3v102.6zm22-140.9l-77.7-52 77.7-52 77.7 52-77.7 52zm22 140.9V346.3l95.4-63.7 76.9 51.4L278 448.8zm190-156l-55.1-36.9L468 219.1v73.7z"/></svg>
+                                                        <span>Codepen</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="row g-1">
+                                        <div class="col-3">
+                                            <a target="_blank" href="https://x.com/mh_abuhassan">
+                                                <div class="pop-out-when-in twitter social-wall flex-center">
+                                                    <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                                                    <!-- <span>X</span> -->
+                                                    <span>
+                                                    Politics
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="under-construction">
+                                                <!-- Background blurred text -->
+                                                <div class="blur-overlay">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
+                                                    <path d="M208,32V192H72a24,24,0,0,0-24,24V56A24,24,0,0,1,72,32Z" opacity="0.2"></path>
+                                                    <path d="M208,24H72A32,32,0,0,0,40,56V224a8,8,0,0,0,8,8H192a8,8,0,0,0,0-16H56a16,16,0,0,1,16-16H208a8,8,0,0,0,8-8V32A8,8,0,0,0,208,24Zm-8,160H72a31.82,31.82,0,0,0-16,4.29V56A16,16,0,0,1,72,40H200Z"></path>
+                                                </svg>
+                                                <span>Project X</span>
+                                                </div>
+                                            
+                                                <!-- Foreground visible content -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
+                                                <path d="M226.76,69a8,8,0,0,0-12.84-2.88l-40.3,37.19-17.23-3.7-3.7-17.23,37.19-40.3A8,8,0,0,0,187,29.24,72,72,0,0,0,88,96,72.34,72.34,0,0,0,94,124.94L33.79,177c-.15.12-.29.26-.43.39a32,32,0,0,0,45.26,45.26c.13-.13.27-.28.39-.42L131.06,162A72,72,0,0,0,232,96,71.56,71.56,0,0,0,226.76,69ZM160,152a56.14,56.14,0,0,1-27.07-7,8,8,0,0,0-9.92,1.77L67.11,211.51a16,16,0,0,1-22.62-22.62L109.18,133a8,8,0,0,0,1.77-9.93,56,56,0,0,1,58.36-82.31l-31.2,33.81a8,8,0,0,0-1.94,7.1L141.83,108a8,8,0,0,0,6.14,6.14l26.35,5.66a8,8,0,0,0,7.1-1.94l33.81-31.2A56.06,56.06,0,0,1,160,152Z"></path>
+                                                </svg>
+                                                <span>Under construction...</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="logos">
+                                                <div class="logo_items">
+                                                    <img src="assets/images/animated-slider/css.png">
+                                                    <img src="assets/images/animated-slider/html.png">
+                                                    <img src="assets/images/animated-slider/jquery.png">
+                                                    <img src="assets/images/animated-slider/nextjs.png">
+                                                    <img src="assets/images/animated-slider/react.png">
+                                                    <img src="assets/images/animated-slider/wordpress.png">
+                                                    
+                                                </div>
+                                                <div class="logo_items">
+                                                    <img src="assets/images/animated-slider/css.png">
+                                                    <img src="assets/images/animated-slider/html.png">
+                                                    <img src="assets/images/animated-slider/jquery.png">
+                                                    <img src="assets/images/animated-slider/nextjs.png">
+                                                    <img src="assets/images/animated-slider/react.png">
+                                                    <img src="assets/images/animated-slider/wordpress.png">    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="logos-reverse">
+                                                <div class="logo_items">
+                                                    <img src="assets/images/animated-slider/css.png">
+                                                    <img src="assets/images/animated-slider/html.png">
+                                                    <img src="assets/images/animated-slider/jquery.png">
+                                                    <img src="assets/images/animated-slider/nextjs.png">
+                                                    <img src="assets/images/animated-slider/react.png">
+                                                    <img src="assets/images/animated-slider/wordpress.png">
+                                                    
+                                                </div>
+                                                <div class="logo_items">
+                                                    <img src="assets/images/animated-slider/css.png">
+                                                    <img src="assets/images/animated-slider/html.png">
+                                                    <img src="assets/images/animated-slider/jquery.png">
+                                                    <img src="assets/images/animated-slider/nextjs.png">
+                                                    <img src="assets/images/animated-slider/react.png">
+                                                    <img src="assets/images/animated-slider/wordpress.png">    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br><br><br><br>
+                        <div class="row g-3">
+                            <div class="col-lg-8 col-md-12">
+                                <div class="introduction-text">
+                                    <p>
+                                        ⚔️ <strong>valk7am – Full-Stack Developer</strong><br>
+                                        <em>Welcome, traveler. You've reached the ground.</em>
+                                    </p>
+                                    
+                                    <p>
+                                        I'm <strong>valk7am</strong> — a full-stack developer, problem-solver, and early riser.
+                                        The name blends <em>valkyrie</em> and <em>7AM</em> — because I like to start strong and stay sharp.
+                                        Wings, sword, shield — that's how I approach code: with focus, balance, and a bit of fight.
+                                    </p>
+                                    
+                                    <p>
+                                        Professionally, I work across stacks driven by project demands — from backend scripting with
+                                        Python, to building with WordPress, and styling with
+                                        Bootstrap. I’m gearing up to dive into Tailwind CSS and
+                                        Next.js as my next front-end frontier. I’m also starting to explore
+                                        Jira Service Management more deeply, leveling up in team ops and structured workflows.
+                                    </p>
+                                    
+                                    <p>
+                                        This space is where I document my journey — from
+                                        <a href="#projects">projects I’ve built
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+                                        </a>, to
+                                        <a href="#blog">insights I’m picking up
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+                                        </a>, and even quick notes in my
+                                        <a href="#til">“Today I Learned” log
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+                                        </a>. If you're curious about my background or values,
+                                        feel free to <a href="#about">read more about me
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+                                        </a>.
+                                    </p>
+                                    
+                                    <p>
+                                        I hope you find something useful here — and if you’ve got an idea, question, or a worthy challenge,
+                                        I’m always open to collaborate.
+                                    </p>
+                                    
+                                    <p><strong>Let’s build.</strong></p>
+                                </div>
+                            </div>
+                            <!-- <div class="col-lg-4 col-md-12">
+                            
                             </div> -->
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
-                            <nav class="navbar navbar-expand-lg navbar-dark">
-                                <div class="container-fluid">
-                                    <a class="navbar-brand" href="#">valk<span class="nickname-7">7</span>am</a>
-                                    <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarViews" aria-controls="navbarViews" aria-expanded="false" aria-label="Toggle navigation">
-                                        <label class="hamburger">
-                                            <input type="checkbox">
-                                            <svg viewBox="0 0 32 32">
-                                              <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-                                              <path class="line" d="M7 16 27 16"></path>
-                                            </svg>
-                                          </label>
-                                    </button>
-                                    <div id="navbarViews" class="collapse navbar-collapse navigation">
-                                        <ul class="navbar-nav ms-auto py-2"> 
+                </section>
+                <section id="Projects" class="col-lg-12 col-md-12">
+                <div clas="container">
+                    <h1>PROJECTS</h1>
+                    <div class="row g-5">
+                        <div class="col-12 col-lg-4">
+                            <div class="h-100 d-flex justify-content-center align-items-center">
+                                <!-- From Uiverse.io by Juanes200122 --> 
+                                <svg xmlns="http://www.w3.org/2000/svg" height="200" width="200">
+                                    <g style="order: -1;">
+                                    <polygon
+                                        transform="rotate(45 100 100)"
+                                        stroke-width="1"
+                                        stroke="#d3a410"
+                                        fill="none"
+                                        points="70,70 148,50 130,130 50,150"
+                                        id="bounce"
+                                    ></polygon>
+                                    <polygon
+                                        transform="rotate(45 100 100)"
+                                        stroke-width="1"
+                                        stroke="#d3a410"
+                                        fill="none"
+                                        points="70,70 148,50 130,130 50,150"
+                                        id="bounce2"
+                                    ></polygon>
+                                    <polygon
+                                        transform="rotate(45 100 100)"
+                                        stroke-width="2"
+                                        stroke=""
+                                        fill="#414750"
+                                        points="70,70 150,50 130,130 50,150"
+                                    ></polygon>
+                                    <polygon
+                                        stroke-width="2"
+                                        stroke=""
+                                        fill="url(#gradiente)"
+                                        points="100,70 150,100 100,130 50,100"
+                                    ></polygon>
+                                    <defs>
+                                        <linearGradient y2="100%" x2="10%" y1="0%" x1="0%" id="gradiente">
+                                        <stop style="stop-color: #1e2026;stop-opacity:1" offset="20%"></stop>
+                                        <stop style="stop-color:#414750;stop-opacity:1" offset="60%"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <polygon
+                                        transform="translate(20, 31)"
+                                        stroke-width="2"
+                                        stroke=""
+                                        fill="#b7870f"
+                                        points="80,50 80,75 80,99 40,75"
+                                    ></polygon>
+                                    <polygon
+                                        transform="translate(20, 31)"
+                                        stroke-width="2"
+                                        stroke=""
+                                        fill="url(#gradiente2)"
+                                        points="40,-40 80,-40 80,99 40,75"
+                                    ></polygon>
+                                    <defs>
+                                        <linearGradient y2="100%" x2="0%" y1="-17%" x1="10%" id="gradiente2">
+                                        <stop style="stop-color: #d3a51000;stop-opacity:1" offset="20%"></stop>
+                                        <stop
+                                            style="stop-color:#d3a51054;stop-opacity:1"
+                                            offset="100%"
+                                            id="animatedStop"
+                                        ></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <polygon
+                                        transform="rotate(180 100 100) translate(20, 20)"
+                                        stroke-width="2"
+                                        stroke=""
+                                        fill="#d3a410"
+                                        points="80,50 80,75 80,99 40,75"
+                                    ></polygon>
+                                    <polygon
+                                        transform="rotate(0 100 100) translate(60, 20)"
+                                        stroke-width="2"
+                                        stroke=""
+                                        fill="url(#gradiente3)"
+                                        points="40,-40 80,-40 80,85 40,110.2"
+                                    ></polygon>
+                                    <defs>
+                                        <linearGradient y2="100%" x2="10%" y1="0%" x1="0%" id="gradiente3">
+                                        <stop style="stop-color: #d3a51000;stop-opacity:1" offset="20%"></stop>
+                                        <stop
+                                            style="stop-color:#d3a51054;stop-opacity:1"
+                                            offset="100%"
+                                            id="animatedStop"
+                                        ></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <polygon
+                                        transform="rotate(45 100 100) translate(80, 95)"
+                                        stroke-width="2"
+                                        stroke=""
+                                        fill="#ffe4a1"
+                                        points="5,0 5,5 0,5 0,0"
+                                        id="particles"
+                                    ></polygon>
+                                    <polygon
+                                        transform="rotate(45 100 100) translate(80, 55)"
+                                        stroke-width="2"
+                                        stroke=""
+                                        fill="#ccb069"
+                                        points="6,0 6,6 0,6 0,0"
+                                        id="particles"
+                                    ></polygon>
+                                    <polygon
+                                        transform="rotate(45 100 100) translate(70, 80)"
+                                        stroke-width="2"
+                                        stroke=""
+                                        fill="#fff"
+                                        points="2,0 2,2 0,2 0,0"
+                                        id="particles"
+                                    ></polygon>
+                                    <polygon
+                                        stroke-width="2"
+                                        stroke=""
+                                        fill="#292d34"
+                                        points="29.5,99.8 100,142 100,172 29.5,130"
+                                    ></polygon>
+                                    <polygon
+                                        transform="translate(50, 92)"
+                                        stroke-width="2"
+                                        stroke=""
+                                        fill="#1f2127"
+                                        points="50,50 120.5,8 120.5,35 50,80"
+                                    ></polygon>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-8 order-lg-first">
+                            <a href="#" target="_blank">
+                                <div class="showcase_card showcase_featured_card">
+                                    <div class="featured_image d-flex justify-content-center align-items-center">
+                                        <div class="AI-wrapper">
+                                            <span class="AI-letter">A</span>
+                                            <span class="AI-letter">I </span>
+                                            <span class="AI-letter">T</span>
+                                            <span class="AI-letter">o</span>
+                                            <span class="AI-letter">o</span>
+                                            <span class="AI-letter">l</span>
+                                            <span class="AI-letter">s </span>
+                                            <span class="AI-letter">s</span>
+                                            <span class="AI-letter">e</span>
+                                            <span class="AI-letter">t</span>
+                                          
+                                            <div class="AI"></div>
+                                          </div>                                          
+                                    </div>
+                                    <div class="details">
+                                    <div class="title">
+                                            <h4>
+                                                Multi-modal AI platform 
+                                            </h4>
+                                    </div> 
+                                    <div class="description">
+                                            <div class="technology_Used">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4 .1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8 .1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3 .1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg>
+                                                
+                                                <svg width="23" height="23" viewBox="0 0 128 128">
+                                                    <path fill="currentColor" d="M44.44 100.63c-4.23-3.33-8.74-6.52-11.83-11.01-6.49-7.92-11.49-17.1-14.9-26.74-2.07-6.27-2.77-12.99-5.44-19.02-2.78-4.38.48-9.16 5.27-10.55 2.13-.41 5.89-2.43 1.36-.98-4.06 2.98-4.45-2.71-.29-3.07 2.84-.38 3.89-2.7 2.92-4.8-3.05-1.99 7.4-4.18 2.14-7.15-5.48-5.91 7.66-7.05 4.42-.33-.77 5.16 9.18-.95 6.87 5.01 2.35 2.86 8.8.65 8.63 4.67 3.42.24 4.6 3.11 7.8 3.33 3.33 1.5 9.36 2.69 10.49 6.44-3.3 2.61-10.95-5.4-11.31 1.84 1 10.69.74 21.7 4.65 31.88 1.85 6.16 6.33 11.01 10.38 15.81 3.88 4.7 9.12 8.01 14.48 10.8 4.69 2.21 9.75 3.68 14.87 4.6 2.07-1.59 5.74-7.48 8.97-5 .16 2.8-6.42 5.84-.31 5.54 3.59-1.08 6.08 2.77 9.04-.71 2.72 3.23 11.32-2.06 9.38 4.53-2.62 1.69-6.44.67-9.07 3-4.33-2.16-7.77 1.93-12.56 1.42-5.32.95-10.73 1.34-16.13 1.34-8.85-.7-17.89-.99-26.3-4.07-4.74-1.38-9.37-4.08-13.53-6.78zm7.47 3.24c4.63 2 9.16 4.11 14.23 4.75 8.05 1.12 16.37 2.84 24.45 1.27-3.66-1.65-7.44.64-11.08-1.18-4.37.94-9.06-.24-13.5-.82-5.05-2.25-10.5-3.8-15.23-6.72-5.91-2.16 3.06 2.77 4.65 3.17 3.69 2.1-4.06-1.08-5.16-1.95-3.09-1.74-3.49-1.37-.31.39.64.37 1.28.77 1.95 1.09zm-8.81-6.23c4.49 1.66-.02-3.16-2.07-2.88-.91-1.58-3.48-2.58-1.67-3.43-3.26 1.13-3.42-4.3-4.95-3.53-3.45-1.09-1.34-4.95-5.45-7.32-.37-2.5-4.08-4.66-5.26-8.43-.52-1.93-4.19-7.46-1.94-2.31 1.92 4.96 5.29 9.21 8.1 13.45 2.18 4.04 4.76 8.26 8.72 10.78 1.34 1.3 2.63 3.27 4.52 3.67zM30.17 83.45c.16-.68.82 1.46 0 0zm18.3 16.18c1-.44-1.43-.56 0 0zm2.44.89c-.25-1.23-1.11.69 0 0zm3.05 1.27c1.45-1.38-2.24-.87 0 0zm5.22 2.91c.89-1.3-2.82-.49 0 0zm-10.03-6.99c2.25-1.46-2.91-.02 0 0zm2.29 1.14c-.07-.77-.82.34 0 0zm11.43 7.13c1.84 1.16 10.73 2.54 5.16.48-.93.2-10.33-2.66-5.16-.48zM44.72 91.85c-.18-.77-2.85-.85 0 0zm5.32 3.1c1.39-.96-2.87-.74 0 0zm4.48 2.75c1.98-.75-3.23-.75 0 0zm-11.97-8.21c2.16 1.65 8.7.21 3.3-.99-2.45-1.31-7.99-2.2-4.22.79l.92.2zm15 9.16c.9-1.53-3.77-.88 0 0zm-4.56-3.63c5.27 1.49-4.43-3.34-1.3-.55l.7.32.6.23zm9.14 5.28c4.99.05-4.51-.68 0 0zm-21.5-13.7c-.19-.93-1.23.08 0 0zm29.94 18.44c.14-1.68-1.62 1.25 0 0zM49.15 91.82c-.3-.88-1.56-.04 0 0zm-8.04-5.8c2.86-.17-3.93-1.26 0 0zm-9.54-6.16c-.36-1.38-3.12-2.47 0 0zM56.6 95.74c-.52-.6-.25.13 0 0zm15.58 9.56c-.05-.91-.85.35 0 0zM55.22 94.32c.28-1.18-2.44-.36 0 0zm-11.6-7.36c2.13-.23-3.42-1.44 0 0zm19.63 12.2c3.32-1.32-3.24-.64 0 0zm-10.21-6.93c3.83.49-4.56-2.61-.84-.28l.84.28zm13.31 8.19c3.58-2.14 2.4 5.01 6.07.6 3.62-2.64-3.13 3.27 1.33.47 3.23-2.16 7.99 1.02 11 2.06 2.16-.11 4.27 1.87 6.49.67 4.27-1.15-8.36-1.71-5.05-3.75-3.91 1.14-6.8-1.36-8.72-3.86-4.39-1.01-9.46-3.25-11.65-7.14-.89-1.46 1.29.21-.77-2.18-2.64-2.35-3.96-5.02-5.73-7.88-2.12-1.13-2.37-4.46-2.58-.11.02-2.74-2.56-4.59-3.19-3.82-.01-2.64 2.76-1.32.82-3.27-.42-2.74-1.79-5.59-2.2-8.68-.64-1.49-.09-4.68-2.19-1.31-.76 3.57-.25-4.38.94-1.76 1.56-2.67-.56-2.36-.65-1.99 1.02-2.26.64-5.46-.27-4.24.54-2.39.86-8.8-.81-7.66 1.01-2.5 1.92-11.44-2.47-8.03-1.78.03-4.85.64-6.31 1.37 4.56 2.51-.46.91-2.32.51-.24 2.33-2.08 1.32-4.38 1.34 3.67.45-1.79 3.75-3.89 2.47-2.74 1.31 2.36 4.57.05 5.58.28 1.52-4.19-.55-3.84 2.96-2.65-1.12-.36 4.16.96 2.38 4.51 1.22 3.18 4.01 3.29 6.65-.74 1.54-3.63-3.62-.64-3.38-2.36-3.83-2.61-1.38-4.56.39-.45.13 4.99 2.53 1.57 3.72 3.01.47 3.1 3.1 3.71 4.76 1.81 1.88 1.44-2.08 3.6.18-1.37-2.02-7.25-5.68-2.52-4.51-.03-2.03-.86-3.67.6-3.63 1.44-2.6-1.51 6.42 1.73 3.11.9-.39 1.12-2.6 2.73.21 2.34 2.3.85 3.97-2.46 1.86.59 2.01 4.42 2.72 3.7 5.86.76 2.76 1.83 1.74 2.76 1.58.73 2.68 1.14.71 1.18-.57 3.34.72 2.56 2.69 3.6 4.07 2.3 1.04-3.29-7.04.66-2.43 4.16 3.75 1.56 5.32-2.17 4.72 2.36-.19 3.12 3.19 6.07 3.07 2.69 1.28 4.52 6.2-.12 4.15-1.61-1.45-7.31-3.24-2.65-.48 4.3 1.99 7.71 3.18 11.86 5.68 2.96 2.12 4.25 4.54 5.37 5.02-2.49 1.19-7.51-.95-3.78-1.61-2.33-.42-4.94-1.6-2.71 1.3 1.89 1.58 6.71 1.42 7.58 1.59-.73 1.61-1.99 1.74.03 1.86-2.25 1.22.72 1.41.93 2.1zm-4.6-13c-1.37-1.43-1.72-4.11-.24-1.78.75.3 2.43 4.38.24 1.78zm14.99 9.52c.85-.06.02.65 0 0zM59.59 83.91c-.06-2.17.49 1.67 0 0zM58.1 81.9c-1.73-3.32 2.17.95 0 0zM40.04 69.44c1.01-.27.5 1.73 0 0zm14.37 7.79c.62-2.33.73 1.96 0 0zm-10.15-7.06c-.71-1.29 1.5 1.21 0 0zm8.71 2.79c-1.63-3.65 1.16-2 .36.6l-.36-.6zM37.95 62.95c-.73-1.2-1.93-4.72-1.55-5.79.35 1.75 3.72 7.53 1.65 2.39-2.28-4.3 2.73 1.4 3.25 2.47.24 1.07-1.41-.29-.29 2.21-2.04-2.85-1.2 1.58-3.06-1.28zm-4.64-3.2c.19-2.79 1.06 1.91 0 0zm2.08.72c1-2.11 1.69 2.93 0 0zm-5.02-3.89c-1.73-1.72-2.98-3.3.08-1.07 1.18.05-2.62-3.6.28-1.16 3.06.56 1.51 5.01-.36 2.23zm2.64-.07c1-.99.53.98 0 0zm1.62.52c-1.52-2.85 1.85 1.2 0 0zm-3.22-3.08c-5.02-4.47 6.31 2.34.82.83l-.82-.83zm14.39 8.36c-2.18-1.3-.58-9.18.16-3.79 2.11-.68-.12 2.78 1.46 2.75-.24 2.18-.95 2.97-1.62 1.04zm5.33 3.15c.21-2.38.45 1.62 0 0zm-.93-.92c.24-1.01.03 1.2 0 0zM32.39 52.48c-3.23-4.45 9.38 4.51 2.07 1.13-.77-.21-1.69-.28-2.07-1.13zm10.26 5.43c-.31-3.75.68.62 0 0zm7.78 5c.6-2.14.05 1.41 0 0zM32.89 50.78c1.92-.41 7.95 3.37 2.41 1.08-.62-.69-1.93-.38-2.41-1.08zm16.47 8.21c.2-3.84 1.15-2.29.01.55l-.01-.55zm-15.05-9.55c.78-1.15-2.08-5.18.41-1.45 1.08.85 3.11 1.43 1.31 1.79 2.84 2.5-.68.68-1.72-.34zm14.24 8.35c.54-4.37.47 2.56 0 0zM32.68 45.41c.6-.26.32.79 0 0zm3.71 2.21c.96-2.01 1.77 2.23 0 0zm10.47 5.82c0-.77.2 1.12 0 0zm-.6-1.34c-1.45-3.59 1.35 1.9 0 0zm-.89-2.35c-.25-1.48.83 1.86 0 0zm1.45-2.36c-1-1.76 1.26-7.75 1.51-4.03-1.05 2.89-.3 4.51.43.63 1.36-3.06-.29 6.02-1.94 3.4zm1.49-8.91c.44-.53.1.65 0 0zM45.82 87.6c-.59-.52.07.33 0 0zm5.13 2.6c2.86.74 2.84-.44.26-.79-1.39-1.29-5.77-2.66-1.85-.16.27.65 1.09.63 1.59.95zm-10.14-6.74c1.57 1.18 5.93 3.32 2.24.45 1.24-1.44-2.38-2.21-1.18-3.18-3.06-1.87-2.41-1.7-.27-1.64-3.67-1.64.53-1.52.33-2.36-1.42-.28-7.03-2.5-3.73.18-3.36-1.71-.8.64-1.82.39-3.44-.94 3.06 2.62-.54 1.73 1.97 1.56 5.3 4 .83 1.65-.57.85 3.21 2.14 4.14 2.78zm5.37 3.09c6.53 2.1-3.2-2.58 0 0zm27.5 16.65c.08-1.3-.9 1.11 0 0zm2.82 1.19c1.51-1.46.06 2.33 2.5-.36.03-1.92-.07-3.06-2.8-.72-.75.42-1.09 2.19.3 1.08zM31.65 76.22c-.47-1.82-3.25-1.81 0 0zm3.01 1.98c-1.12-1.86-4-1.68 0 0zm17.17 10.35c1.68 1.49 7.7 1.09 2.03.18-.83-1.24-5.32-.94-2.03-.18zm23.6 14.57c2.57-2.16-2.5.97 0 0zm5.36 3.69c.02-.69-1.11.3 0 0zm.01-.97c2.86-3.03-2.77.18 0 0zM24.22 70.01c-2.43-3.47-1.51-5.03-3.86-7.87-.45-2.17-4.03-7.09-1.85-1.88 1.99 3.05 2.58 7.77 5.71 9.75zm55.68 34.87c5.26-3.4-2.15-1.48 0 0zm4.01 1.57c2.64-2.26-1.66-.47 0 0zM30.75 72.38c.76-1.12-1.94-.14 0 0zm52.33 32.99c2.55-1.64-.59-1.39-.46.15l.46-.15zM48.5 83.58c-.09-1.11-1.35.09 0 0zm2.14 1.23c-.69-1.38-1.05.21 0 0zm36.53 21.67c3.27-2.36-1.98-.45-.68.45l.68-.45zm-1.26-.6c2.67-2.23-2.8.99 0 0zm6.39 4.25c1.79-1.19-2.17-.38 0 0zM32.39 71.57c2.39.54 9.56 5.89 5.33.37-2.17-.64-.87-5.94-3.08-5 1.48 2.48 1.22 3.53-1.9 1.97-3.91-1.91-2.2.94-1.43 1.73-1.04.25 1.39.91 1.08.93zm-10.9-8.61c.43-1.77-3.95-9.75-2.07-4 .68 1.21.61 3.49 2.07 4zM41.5 75.3c-1.23-1.03-.06-.15 0 0zm3.03.71c0-1.88-3.35-.77 0 0zm26.3 16.57c-.5-1.28-1.98-.02 0 0zm1.26.93c-.18-.72-.72.14 0 0zm10.43 6.56c1-.74-1.25-.09 0 0zM26.93 64.35c2.87-1.11-3.07-.79 0 0zm41.59 26.2c-.04-1.86-1.83.46 0 0zM25.8 61.71c1.84-.62-1.71-.41 0 0zm5.34 2.59c-.03-.61-.56.23 0 0zm65.22 39.99c2.37-.48 7.77 1.21 8.64-.63-2.88-.07-9.95-2.03-10.28.46l.63.1 1.01.07zM32.84 64.73c.05-1.88-1.46-.07 0 0zm-14.05-9.75c-.64-3.58-2.43-.54 0 0zm3.35.84c.04-1.15-3.07-1.03 0 0zm1.91.94c-.55-.44-.43.57 0 0zm12.06 7.73c.57-.52-1.35-.38 0 0zm-13.33-9.85c-.33-2.71-3.88-.4 0 0zm-6.87-4.46c-.1-1.25-.67.47 0 0zm1.02-.77c-.17-1.48-.88.19 0 0zm5.65 3.37c2.39-.94-4.35-1.94-.49-.18l.49.18zm75.59 46.69c1.53-1.4-1.94-.43 0 0zm9.13 4.74c.61-1.81-1.54.23 0 0zM23.15 49.82c.26-1.75-1.89.35 0 0zm-8.03-5.38c-.43-2.47-.37-6.82 3.76-5.35-5.51 1.1 3.82 6.85 2.64 2.31 2.32.11 4.53-1.37 3.32.88 4.57-.5 7.73-4.46 12.14-3.91 3.44-.46 7.19-.8 10.89-2.18 3.04-.22 5.97-3.5 4.31-5.44-4.15-.35-8.5.17-13.08 1.08-5.08 1.06-9.7 3.06-14.83 3.93-5 .67 1 1.85-.43 2.11-2.61.9 3.11 1.52-.34 2.47-2.13-.41-4.35-1.14-3.44-3.38-4.79.62-9 2.61-5.21 7.48h.27zm11.54-5.88c1.12-4.14 6.01 3.4 1.84.55-.5-.38-1.32-.68-1.84-.55zm.22-2.01c1.62-1.2.86.68 0 0zm2.06.04c.15-1.9 4.71 1.01.75.68l-.75-.68zm2.81-1.14c1.03-1.2.3 1.07 0 0zm.72-.48c1.71-2.06 9.69-1.31 3.85-.2-1.56-1.18-2.76.7-3.85.2zm10.42-1.6c-.26-5.62 5.18 1.99 0 0zm2.96-.02c1.08-2.83 4.2-1.14.5-.57.08.3-.11 1.46-.5.57zM21.99 48.37c3.23-1.98-3.43-1.72 0 0zm2.39.66c1.13-1.2-2.46-.49 0 0zm-7.04-4.99c1.85-1.42-2.18-.54 0 0zm95.35 59.65c.05-1.65-1.41.74 0 0zM103 97.08c.28-1.9-1.24.16 0 0zm12.36 7.25c2.58.01 7.82-.8 2.2-.8-.88.13-5.13.11-2.2.8zM26.48 47.87c2.09-.14 3.27-2.3-.41-2.18-5.69-.59 5.02 1.95-.73 1.22-.77.51 1.09 1.1 1.14.96zm1.84.93c-.22-1.34-.65.71 0 0zm2.18-5.82c.9-1.12-1.26-.3 0 0zm-6.95-11.6c3.73-1.27 8.82-2.69 10.58.62-1.79-2.15-.72-4.28.97-1.12 2.39 3.19 3.59-1.45 2.03-2.52 1.77 2.2 3.79 3.24 1.19.14 2.83-3.4-5.66.45-7.59.41-.92.41-9.58 2.2-7.18 2.47zm2.19-4.18c2.13-1.6 7.35.96 4-1.59-.33-.3-7.35 1.93-4 1.59zm7.75.32c2.49.06-1.07-3.34 1.89-1.8-.49-1.59-3.45-1.89-4.9-2.52-.82 1.45 1.66 4.34 3.01 4.32zm-6.39-7.04c.86-1.16-1.51.6 0 0zm3.16.76c4.01-.53-1.02-1.72-.81-.04l.81.04zm-5.91-4.62c-2.82-3.69 5.31.62 2.44-3.24-2.41-1.92-4.73 2.16-2.44 3.24zm36.21 19.5c1.29-2.29-5.34-3.09-.87-.81.42.14.32.97.87.81z"></path>
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM180.9 444.9c-33.7 0-53.2-17.4-63.2-38.5L152 385.7c6.6 11.7 12.6 21.6 27.1 21.6c13.8 0 22.6-5.4 22.6-26.5V237.7h42.1V381.4c0 43.6-25.6 63.5-62.9 63.5zm85.8-43L301 382.1c9 14.7 20.8 25.6 41.5 25.6c17.4 0 28.6-8.7 28.6-20.8c0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5c0-31.6 24.1-55.6 61.6-55.6c26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18c-12.3 0-20.1 7.8-20.1 18c0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2c0 37.8-29.8 58.6-69.7 58.6c-39.1 0-64.4-18.6-76.7-43z"/></svg>    
+                                            </div>
+                                            <p>                                    
+                                                Built with Flask, Metronic, and Azure, integrating OpenAI, LLAMA, Microsoft, and Panda to handle:
+                                                💬 Chat · 📊 Table Generation · 🖼️ Image Creation · 🔉 Audio Transcription · 🎥 Video Analysis · ❓ Smart Q&A
+                                            </p>
+                                            <ul class="contributions">
+                                                <li>
+                                                    Built back-end with Flask for dynamic AI routing
+                                                </li>
+                                                <li>
+                                                    Designed front-end with Metronic + jQuery
+                                                </li>
+                                                <li>
+                                                    Automated CI/CD with GitHub Actions & Azure    
+                                                </li>
+                                                <li>
+                                                    Enabled async processing across multiple AI providers
+                                                </li>
+                                            </ul>
+                                    </div> 
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-6">
+                            <a href="#" target="_blank">
+                                <div class="showcase_card scollonHover ">
+                                    <div class="featured_image">
+                                        <img src="assets/images/projects_screenshots/notnumbersimage.png" />
+                                    </div>
+                                    <div class="details">
+                                    <div class="title">
+                                            <h4>
+                                                Not Numbers – Gaza War Storytelling Site
+                                            </h4>
+                                    </div> 
+                                    <div class="description">
+                                            <div class="technology_Used">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 8C119.3 8 8 119.2 8 256c0 136.7 111.3 248 248 248s248-111.3 248-248C504 119.2 392.7 8 256 8zM33 256c0-32.3 6.9-63 19.3-90.7l106.4 291.4C84.3 420.5 33 344.2 33 256zm223 223c-21.9 0-43-3.2-63-9.1l66.9-194.4 68.5 187.8c.5 1.1 1 2.1 1.6 3.1-23.1 8.1-48 12.6-74 12.6zm30.7-327.5c13.4-.7 25.5-2.1 25.5-2.1 12-1.4 10.6-19.1-1.4-18.4 0 0-36.1 2.8-59.4 2.8-21.9 0-58.7-2.8-58.7-2.8-12-.7-13.4 17.7-1.4 18.4 0 0 11.4 1.4 23.4 2.1l34.7 95.2L200.6 393l-81.2-241.5c13.4-.7 25.5-2.1 25.5-2.1 12-1.4 10.6-19.1-1.4-18.4 0 0-36.1 2.8-59.4 2.8-4.2 0-9.1-.1-14.4-.3C109.6 73 178.1 33 256 33c58 0 110.9 22.2 150.6 58.5-1-.1-1.9-.2-2.9-.2-21.9 0-37.4 19.1-37.4 39.6 0 18.4 10.6 33.9 21.9 52.3 8.5 14.8 18.4 33.9 18.4 61.5 0 19.1-7.3 41.2-17 72.1l-22.2 74.3-80.7-239.6zm81.4 297.2l68.1-196.9c12.7-31.8 17-57.2 17-79.9 0-8.2-.5-15.8-1.5-22.9 17.4 31.8 27.3 68.2 27.3 107 0 82.3-44.6 154.1-110.9 192.7z"/></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM180.9 444.9c-33.7 0-53.2-17.4-63.2-38.5L152 385.7c6.6 11.7 12.6 21.6 27.1 21.6c13.8 0 22.6-5.4 22.6-26.5V237.7h42.1V381.4c0 43.6-25.6 63.5-62.9 63.5zm85.8-43L301 382.1c9 14.7 20.8 25.6 41.5 25.6c17.4 0 28.6-8.7 28.6-20.8c0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5c0-31.6 24.1-55.6 61.6-55.6c26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18c-12.3 0-20.1 7.8-20.1 18c0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2c0 37.8-29.8 58.6-69.7 58.6c-39.1 0-64.4-18.6-76.7-43z"/></svg>    
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3 .1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2 .1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"/></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M320 104.5c171.4 0 303.2 72.2 303.2 151.5S491.3 407.5 320 407.5c-171.4 0-303.2-72.2-303.2-151.5S148.7 104.5 320 104.5m0-16.8C143.3 87.7 0 163 0 256s143.3 168.3 320 168.3S640 349 640 256 496.7 87.7 320 87.7zM218.2 242.5c-7.9 40.5-35.8 36.3-70.1 36.3l13.7-70.6c38 0 63.8-4.1 56.4 34.3zM97.4 350.3h36.7l8.7-44.8c41.1 0 66.6 3 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7h-70.7L97.4 350.3zm185.7-213.6h36.5l-8.7 44.8c31.5 0 60.7-2.3 74.8 10.7 14.8 13.6 7.7 31-8.3 113.1h-37c15.4-79.4 18.3-86 12.7-92-5.4-5.8-17.7-4.6-47.4-4.6l-18.8 96.6h-36.5l32.7-168.6zM505 242.5c-8 41.1-36.7 36.3-70.1 36.3l13.7-70.6c38.2 0 63.8-4.1 56.4 34.3zM384.2 350.3H421l8.7-44.8c43.2 0 67.1 2.5 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7H417l-32.8 168.7z"/></svg>
+                                            </div>
+                                            <p class="summary">
+                                                An immersive storytelling experience focusing on the lives of Gaza's civilians, blending animations, journalism, and interactive design.
+                                            </p>
+                                            <ul class="contributions">
+                                                <li>Developed scroll-based animations using GSAP</li>
+                                                <li>Worked closely with designers to match visual fidelity</li>
+                                                <li>Optimized performance for mobile devices</li>
+                                            </ul>
+                                    </div> 
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-6">
+                            <a href="https://tjcproject.org" target="_blank">
+                                <div class="showcase_card scollonHover">
+                                    <div class="featured_image">
+                                        <img src="assets/images/projects_screenshots/tjcimage.png" />
+                                    </div>
+                                    <div class="details">
+                                    <div class="title">
+                                            <h4>
+                                                TJC Project
+                                            </h4>
+                                    </div> 
+                                    <div class="description">
+                                            <div class="technology_Used">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 8C119.3 8 8 119.2 8 256c0 136.7 111.3 248 248 248s248-111.3 248-248C504 119.2 392.7 8 256 8zM33 256c0-32.3 6.9-63 19.3-90.7l106.4 291.4C84.3 420.5 33 344.2 33 256zm223 223c-21.9 0-43-3.2-63-9.1l66.9-194.4 68.5 187.8c.5 1.1 1 2.1 1.6 3.1-23.1 8.1-48 12.6-74 12.6zm30.7-327.5c13.4-.7 25.5-2.1 25.5-2.1 12-1.4 10.6-19.1-1.4-18.4 0 0-36.1 2.8-59.4 2.8-21.9 0-58.7-2.8-58.7-2.8-12-.7-13.4 17.7-1.4 18.4 0 0 11.4 1.4 23.4 2.1l34.7 95.2L200.6 393l-81.2-241.5c13.4-.7 25.5-2.1 25.5-2.1 12-1.4 10.6-19.1-1.4-18.4 0 0-36.1 2.8-59.4 2.8-4.2 0-9.1-.1-14.4-.3C109.6 73 178.1 33 256 33c58 0 110.9 22.2 150.6 58.5-1-.1-1.9-.2-2.9-.2-21.9 0-37.4 19.1-37.4 39.6 0 18.4 10.6 33.9 21.9 52.3 8.5 14.8 18.4 33.9 18.4 61.5 0 19.1-7.3 41.2-17 72.1l-22.2 74.3-80.7-239.6zm81.4 297.2l68.1-196.9c12.7-31.8 17-57.2 17-79.9 0-8.2-.5-15.8-1.5-22.9 17.4 31.8 27.3 68.2 27.3 107 0 82.3-44.6 154.1-110.9 192.7z"/></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM180.9 444.9c-33.7 0-53.2-17.4-63.2-38.5L152 385.7c6.6 11.7 12.6 21.6 27.1 21.6c13.8 0 22.6-5.4 22.6-26.5V237.7h42.1V381.4c0 43.6-25.6 63.5-62.9 63.5zm85.8-43L301 382.1c9 14.7 20.8 25.6 41.5 25.6c17.4 0 28.6-8.7 28.6-20.8c0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5c0-31.6 24.1-55.6 61.6-55.6c26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18c-12.3 0-20.1 7.8-20.1 18c0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2c0 37.8-29.8 58.6-69.7 58.6c-39.1 0-64.4-18.6-76.7-43z"/></svg>    
+                                            </div>
+                                            <span>                                    
+                                                The TJC initiative is a collective project aimed at raising awareness and accountability about the targeting of journalists globally.
+                                            </span>
+                                    </div> 
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-6">
+                            <a href="https://forum.aljazeera.net" target="_blank">
+                                <div class="showcase_card scollonHover">
+                                    <div class="featured_image">
+                                        <img src="assets/images/projects_screenshots/forumimage.png" />
+                                    </div>
+                                    <div class="details">
+                                    <div class="title">
+                                        <h4>
+                                            The Forum 16
+                                        </h4>
+                                    </div> 
+                                    <div class="description">
+                                            <div class="technology_Used">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 8C119.3 8 8 119.2 8 256c0 136.7 111.3 248 248 248s248-111.3 248-248C504 119.2 392.7 8 256 8zM33 256c0-32.3 6.9-63 19.3-90.7l106.4 291.4C84.3 420.5 33 344.2 33 256zm223 223c-21.9 0-43-3.2-63-9.1l66.9-194.4 68.5 187.8c.5 1.1 1 2.1 1.6 3.1-23.1 8.1-48 12.6-74 12.6zm30.7-327.5c13.4-.7 25.5-2.1 25.5-2.1 12-1.4 10.6-19.1-1.4-18.4 0 0-36.1 2.8-59.4 2.8-21.9 0-58.7-2.8-58.7-2.8-12-.7-13.4 17.7-1.4 18.4 0 0 11.4 1.4 23.4 2.1l34.7 95.2L200.6 393l-81.2-241.5c13.4-.7 25.5-2.1 25.5-2.1 12-1.4 10.6-19.1-1.4-18.4 0 0-36.1 2.8-59.4 2.8-4.2 0-9.1-.1-14.4-.3C109.6 73 178.1 33 256 33c58 0 110.9 22.2 150.6 58.5-1-.1-1.9-.2-2.9-.2-21.9 0-37.4 19.1-37.4 39.6 0 18.4 10.6 33.9 21.9 52.3 8.5 14.8 18.4 33.9 18.4 61.5 0 19.1-7.3 41.2-17 72.1l-22.2 74.3-80.7-239.6zm81.4 297.2l68.1-196.9c12.7-31.8 17-57.2 17-79.9 0-8.2-.5-15.8-1.5-22.9 17.4 31.8 27.3 68.2 27.3 107 0 82.3-44.6 154.1-110.9 192.7z"/></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM180.9 444.9c-33.7 0-53.2-17.4-63.2-38.5L152 385.7c6.6 11.7 12.6 21.6 27.1 21.6c13.8 0 22.6-5.4 22.6-26.5V237.7h42.1V381.4c0 43.6-25.6 63.5-62.9 63.5zm85.8-43L301 382.1c9 14.7 20.8 25.6 41.5 25.6c17.4 0 28.6-8.7 28.6-20.8c0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5c0-31.6 24.1-55.6 61.6-55.6c26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18c-12.3 0-20.1 7.8-20.1 18c0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2c0 37.8-29.8 58.6-69.7 58.6c-39.1 0-64.4-18.6-76.7-43z"/></svg>    
+                                            </div>
+                                            <span>
+                                                this my letast project that covers a very nice aspect of the my talent in creating amazing websites.
+                                            </span>
+                                    </div> 
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-6">
+                            <a href="https://forum.aljazeera.net/forum-15/en/index.html" target="_blank">
+                                <div class="showcase_card">
+                                    <div class="featured_image">
+                                        <img src="assets/images/projects_screenshots/forum15.png" />
+                                    </div>
+                                    <div class="details">
+                                    <div class="title">
+                                            <h4>
+                                                The Forum 15
+                                            </h4>
+                                    </div> 
+                                    <div class="description">
+                                            <div class="technology_Used">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 8C119.3 8 8 119.2 8 256c0 136.7 111.3 248 248 248s248-111.3 248-248C504 119.2 392.7 8 256 8zM33 256c0-32.3 6.9-63 19.3-90.7l106.4 291.4C84.3 420.5 33 344.2 33 256zm223 223c-21.9 0-43-3.2-63-9.1l66.9-194.4 68.5 187.8c.5 1.1 1 2.1 1.6 3.1-23.1 8.1-48 12.6-74 12.6zm30.7-327.5c13.4-.7 25.5-2.1 25.5-2.1 12-1.4 10.6-19.1-1.4-18.4 0 0-36.1 2.8-59.4 2.8-21.9 0-58.7-2.8-58.7-2.8-12-.7-13.4 17.7-1.4 18.4 0 0 11.4 1.4 23.4 2.1l34.7 95.2L200.6 393l-81.2-241.5c13.4-.7 25.5-2.1 25.5-2.1 12-1.4 10.6-19.1-1.4-18.4 0 0-36.1 2.8-59.4 2.8-4.2 0-9.1-.1-14.4-.3C109.6 73 178.1 33 256 33c58 0 110.9 22.2 150.6 58.5-1-.1-1.9-.2-2.9-.2-21.9 0-37.4 19.1-37.4 39.6 0 18.4 10.6 33.9 21.9 52.3 8.5 14.8 18.4 33.9 18.4 61.5 0 19.1-7.3 41.2-17 72.1l-22.2 74.3-80.7-239.6zm81.4 297.2l68.1-196.9c12.7-31.8 17-57.2 17-79.9 0-8.2-.5-15.8-1.5-22.9 17.4 31.8 27.3 68.2 27.3 107 0 82.3-44.6 154.1-110.9 192.7z"/></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="23" height="23" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM180.9 444.9c-33.7 0-53.2-17.4-63.2-38.5L152 385.7c6.6 11.7 12.6 21.6 27.1 21.6c13.8 0 22.6-5.4 22.6-26.5V237.7h42.1V381.4c0 43.6-25.6 63.5-62.9 63.5zm85.8-43L301 382.1c9 14.7 20.8 25.6 41.5 25.6c17.4 0 28.6-8.7 28.6-20.8c0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5c0-31.6 24.1-55.6 61.6-55.6c26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18c-12.3 0-20.1 7.8-20.1 18c0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2c0 37.8-29.8 58.6-69.7 58.6c-39.1 0-64.4-18.6-76.7-43z"/></svg>    
+                                            </div>
+                                            <span>
+                                                Filler text, luram or some thing like that 
+                                            </span>
+                                    </div> 
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-6">
+                            <div class="showcase_card scollonHover">
+                                <div class="featured_image">
+                                    <img src="assets/images/github-profile1.png" />
+                                </div>
+                                <div class="details">
+                                <div class="title">
+                                        Project #
+                                </div> 
+                                <div class="description">
+                                        React - Dark.
+                                        <span>
+                                            Filler text, luram or some thing like that 
+                                        </span>
+                                </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-6">
+                            <div class="showcase_card">
+                                <div class="featured_image">
+                                    <img src="assets/images/github-profile1.png" />
+                                </div>
+                                <div class="details">
+                                <div class="title">
+                                        Project #
+                                </div> 
+                                <div class="description">
+                                        React - Dark.
+                                        <span>
+                                            Filler text, luram or some thing like that 
+                                        </span>
+                                </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </section>
+                <section id="About" class="col-lg-12 col-md-12">
+                <div clas="container">
+                    <div class="row g-1">
+                        <div class="col-12 col-lg-8">
+                            <div class="about-abstract">
+                                <h1>ABOUT ME</h1>
+                            
+                                <p>I'm <strong>Mahmoud Abuhassan</strong>, a <strong>Full Stack Developer</strong> originally from <strong>Palestine</strong>, currently based in <strong>Doha, Qatar</strong>, and working as a <strong>Software Engineer</strong> at <strong>Al Jazeera Media Network</strong>.</p>
+                            
+                                <p>I work across the full development stack — from configuring <strong>Apache2</strong> servers and managing backend systems, to crafting custom front-end experiences in <strong>WordPress</strong> and building backend services using <strong>Python</strong> with <strong>Flask</strong>. I've also developed complete projects using Flask, taking full ownership from backend to frontend.</p>
+                            
+                                <p>I prefer using <strong>pure HTML, CSS, and JavaScript</strong> when possible, believing that the simplest solution is often the best. I'm also experienced with <strong>React</strong>, <strong>React Native</strong>, <strong>Expo</strong>, <strong>Bootstrap</strong>, and <strong>jQuery</strong>, and I'm currently exploring <strong>Next.js</strong> and <strong>Tailwind CSS</strong> to keep up with modern development trends.</p>
+                            
+                                <p>On the backend, I'm well-established in <strong>API and REST API development</strong>, with hands-on experience in <strong>Java</strong>, <strong>PHP</strong>, <strong>MongoDB</strong>, <strong>Firebase</strong>, <strong>SQL</strong>, and <strong>PostgreSQL</strong>, all within <strong>Linux-based environments</strong>.</p>
+                            
+                                <p>I've worked with headless CMS platforms like <strong>Contentful</strong>, and I'm currently exploring open-source solutions such as <strong>Ghost</strong> and similar systems to broaden my content architecture skills.</p>
+                            
+                                <p>I'm a <strong>native Arabic speaker</strong> and <strong>fluent in English</strong>, bringing cultural awareness and strong communication to every team I join. Outside of work, I enjoy <strong>technical video games</strong> that challenge my creativity and logic — much like the systems I build every day.</p>
+                            </div>                        
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div>
+                                <img width="100%" style="background-color: white;border-radius: 30px;filter: invert(1);mix-blend-mode: color-dodge;opacity: 0.05;" src="assets/images/valk7amLogo.png" />
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="experience">
+                                <hr>
+                                <div class="row g-2">
+                                    <div class="col-12 col-lg-3 col-md-3">
+                                        <div class="sticky-title">
+                                            <h1>
+                                                EXPERIANCE
+                                            </h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-9 col-md-9">         
+                                        <ul class="content-list">
                                             <li>
-                                                <a class="show-toggle active py-2" href="#" data-target="#Overview">
-                                                    <span>
-                                                        Overview
-                                                    </span>
-                                                </a>
+                                                <h4>
+                                                <strong>Software Engineer</strong> At <a target="_blank" href="https://aljazeera.net">Al Jazeera Media Network
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width=".8em" height=".8em" fill="rgb(233, 223, 10)" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+                                                    </a> 
+                                                </h4>
+                                                <span>5 Jul, 2023</span> > NOW
+                                                <br><br>
                                             </li>
                                             <li>
-                                                <a class="show-toggle py-2" href="about.html" data-target="#About">
-                                                    <span>
-                                                        About
-                                                    </span> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="show-toggle py-2" href="#" data-target="#Projects">
-                                                    <span>
-                                                        Projects
-                                                    </span> 
-                                                </a>
-                                            </li>                    
-                                            <li>
-                                                <a class="show-toggle py-2" href="#" data-target="#Blogs">
-                                                    <span>
-                                                        Blogs
-                                                    </span> 
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="show-toggle py-2" href="#" data-target="#Socials">
-                                                    <span>
-                                                        Socials
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <div class="search">
-                                                    <!-- Search Button -->
-                                                    <button id="searchTrigger" class="search-button">
-                                                        Search...<kbd class="keyboard">Ctrl+K</kbd>
-                                                    </button>
-                                                </div>
+                                                <h4>
+                                                <strong>IT Teacher</strong> At <a target="_blank" href="https://aljazeera.net">Ministry Of Education
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width=".8em" height=".8em" fill="rgb(233, 223, 10)" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+                                                    </a> 
+                                                </h4>
+                                                <span>12 Jun, 2022</span> > 28 Aug, 2023
+                                                <br><br>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                            </nav>
+                            </div>
                         </div>
-                        
-                    </div>
-                </div>          
-            </div>
-                 <!-- Search Modal -->
-                 <div id="searchModal" class="search-modal" style="display:none;">
-                    <div class="search-box">
-                    <input type="text" placeholder="Type to search..." />
-                    <button id="closeSearch">✖</button>
-                    </div>
-                </div>
-        </header>
-
-  
-      <!-- <sidebar class="col-lg-3 col-md-12">
-        <div class="container">
-            <h1>
-                Hello World!
-            </h1>
-        </div>
-      </sidebar> -->
-
-        <main class="container">
-        <section id="Overview" class="col-lg-12 col-md-12 show">
-            <div clas="container">
-                <div class="hero">
-
-                
-                    <div class="row">
-                        <div class="col-lg-7 col-md-12 my-auto">
-                            <div>
-                                <h1 class="hero-name">Mahmoud Abuhassan</h1>
-                                <div class="hero-title">
-                                    <p>
-                                        I'm a
-                                    </p>
-                                    <div class="changebox">
-                                        <span>
-                                            Software Engineer
-                                        </span><br>
-                                        <span>
-                                            Frontend Dev.
-                                        </span><br>
-                                        <span>
-                                            Backend Dev.
-                                        </span><br>
-                                        <span>
-                                            AI Specilist
-                                        </span><br>
-                                        <span>
-                                            Father
-                                        </span>
+                        <!-- <div class="col-12">
+                            <div class="education">
+                                <hr>
+                                <div class="row g-2">
+                                    <div class="col-12 col-lg-3 col-md-3">
+                                        <div class="sticky-title">
+                                            <h1>
+                                                EDUCATION
+                                            </h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-9 col-md-9">         
+                                        <ul class="content-list">
+                                            <li>
+                                                <h4>
+                                                    Software Engineer <span>15 jun, 2025</span>
+                                                </h4>
+                                                <p>Al Jazeera Media Network </p>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    Ministry Of Education <span>5 may, 2025</span>
+                                                </h4>
+                                                <p>IT Teacher</p>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    Al Jazeera Media Network <span>15 jun, 2025</span>
+                                                </h4>
+                                                <p>Software Engineer</p>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    Al Jazeera Media Network <span>15 jun, 2025</span>
+                                                </h4>
+                                                <p>Software Engineer</p>
+                                            </li>
+                                            <li>
+                                                <h4>
+                                                    Al Jazeera Media Network <span>15 jun, 2025</span>
+                                                </h4>
+                                                <p>Software Engineer</p>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- <div class="title_container">
-                                <h1>
-                                    <span class="title">Mahmoud Abuhassan</span>
-                                    <span class="title">Full Stack Developer</span>
-                                    <span class="title"></span>
-                                </h1>
-                            </div>  -->
-
-                        </div>
-                        <div class="col-lg-5 col-md-12">
-                            <!-- <video class="float-end" width="350" height="350" autoplay muted loop playsinline>
-                                <source src="assets/images/heroAnimationFiller.webm" type="video/webm">
-                                Your browser does not support the video tag.
-                                </video>  
-                                <div id="hero-animation"></div>    -->
-                                <!-- <lottie-player src="https://app.lottiefiles.com/share/769926e5-be6d-4fe6-b794-ca5217f4f25f" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop controls autoplay></lottie-player> -->
-                                <lottie-player
-                                    class="m-auto"
-                                    src="https://lottie.host/1043ce0d-7b3f-415d-aada-29772bb64341/0NpQq3Fmy3.json" 
-                                    background="transparent" 
-                                    speed="1" 
-                                    style="width: 500px; height: 300px; margin: 30px auto;" 
-                                    loop autoplay
-                                >
-                                </lottie-player>
-                            </div>
-                    </div>
-                    
-                </div>
-                <div class="wall">
-                    <div class="row g-2">
-                        <div class="col-lg-6 col-md-12">
-                            <a target="_blank" href="https://github.com/Valk7am">
-                                <div class="github-profile pop-out-when-in">
-                                    <div class="github-profile-text">
-                                    
-                                        <h4>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-                                            </svg>
-                                            Github
-                                        </h4>
-                                        <p>
-                                           It's not about the green dots...
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            <div id="featuredPost">
-
-                            </div>
-                        </div>
-                        <!-- <div class="col-lg-4 col-9">
-                            <a target="_blank" href="https://github.com/Valk7am">
-                                <div class="github-progress pop-out-when-in">
-                                    <div class="github-progress-chart"></div>
-                                    <div class="d-flex justify-content-evenly align-items-center">
-                                        <div>
-                                            <lebal>Stars: <span>#</span></lebal>
-                                        </div>
-                                        <div>    
-                                            <lebal>Followers: <span>#</span></lebal>
-                                        </div>
-                                        <div>    
-                                            <lebal>Repos: <span>#</span></lebal>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-3">
-                            <a target="_blank" href="https://youtu.be/h8Q_J0M2HSs?t=50">
-                                <div class="quran pop-out-when-in">
-                                    <h1>
-                                        سورة الأنسان
-                                    </h1>
-                                </div>
-                            </a>
                         </div> -->
-
-                        <div class="col-lg-6 col-md-12">
-                            <div class="row g-1">
-                                <div class="col-lg-2 col-md-3">
-                                    <a target="_blank" href="https://youtu.be/h8Q_J0M2HSs?t=50">
-                                        <div class="pop-out-when-in mystery social-wall flex-center">
-                                            <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M80 160c0-35.3 28.7-64 64-64l32 0c35.3 0 64 28.7 64 64l0 3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74l0 1.4c0 17.7 14.3 32 32 32s32-14.3 32-32l0-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7l0-3.6c0-70.7-57.3-128-128-128l-32 0C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg>
-                                            <span>Mystery</span>
-                                        </div>
-                                    </a>
+                    </div>
+                </div>
+                </section>
+                <section id="Blogs" class="col-lg-12 col-md-12">
+                    <div class="blog-container">
+                        <h1>
+                            My journey
+                        </h1>
+                        <div id="table-container">
+                            <div class="row g-2">
+                                <!-- Skeleton item x8 -->
+                                <!-- Repeat this block 8 times -->
+                                <div class="col-lg-12 col-md-12">
+                                <div class="skeleton-link">
+                                    <ul class="blog-link">
+                                    <li class="skeleton skeleton-title"></li>
+                                    <li class="skeleton skeleton-description"></li>
+                                    <li class="skeleton skeleton-date"></li>
+                                    </ul>
                                 </div>
-                                <div class="col-lg-10 col-md-9">
-                                    <div class="row g-1">
-                                        <div class="col-3 col-lg-6 col-md-6">
-                                            <a target="_blank" href="https://www.twitch.tv/7am7od">
-                                                <div class="pop-out-when-in twitch social-wall flex-center">
-                                                    <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M391.2 103.5H352.5v109.7h38.6zM285 103H246.4V212.8H285zM120.8 0 24.3 91.4V420.6H140.1V512l96.5-91.4h77.3L487.7 256V0zM449.1 237.8l-77.2 73.1H294.6l-67.6 64v-64H140.1V36.6H449.1z"/></svg>
-                                                    <span>Twitch</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-3 col-lg-6 col-md-6">
-                                            <a target="_blank" href="https://www.linkedin.com/in/mahmoud-abu-hassan-06111b235/">
-                                                <div class="pop-out-when-in linkdin social-wall flex-center">
-                                                    <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
-                                                    <span>Linkdin</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-3 col-lg-6 col-md-6">
-                                            <a target="_blank" href="https://www.youtube.com/@mh97-abuhassan">
-                                                <div class="pop-out-when-in youtube social-wall flex-center">
-                                                    <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
-                                                    <span>Youtube</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-3 col-lg-6 col-md-6">
-                                        <a target="_blank" href="https://codepen.io/Mahmoud-Abu-Hassan">
-                                            <div class="pop-out-when-in codepen social-wall flex-center">
-                                                <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M502.3 159.7l-234-156c-8-4.9-16.5-5-24.6 0l-234 156C3.7 163.7 0 170.8 0 178v156c0 7.1 3.7 14.3 9.7 18.3l234 156c8 4.9 16.5 5 24.6 0l234-156c6-4 9.7-11.1 9.7-18.3V178c0-7.1-3.7-14.3-9.7-18.3zM278 63.1l172.3 114.9-76.9 51.4L278 165.7V63.1zm-44 0v102.6l-95.4 63.7-76.9-51.4L234 63.1zM44 219.1l55.1 36.9L44 292.8v-73.7zm190 229.7L61.7 334l76.9-51.4L234 346.3v102.6zm22-140.9l-77.7-52 77.7-52 77.7 52-77.7 52zm22 140.9V346.3l95.4-63.7 76.9 51.4L278 448.8zm190-156l-55.1-36.9L468 219.1v73.7z"/></svg>
-                                                <span>Codepen</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            <div class="row g-1">
-                                <div class="col-3">
-                                    <a target="_blank" href="https://x.com/mh_abuhassan">
-                                        <div class="pop-out-when-in twitter social-wall flex-center">
-                                            <svg width="21" height="21" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-                                            <!-- <span>X</span> -->
-                                            <span>
-                                               Politics
-                                            </span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-9">
-                                    <div class="under-construction">
-                                        <!-- Background blurred text -->
-                                        <div class="blur-overlay">
-                                          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
-                                            <path d="M208,32V192H72a24,24,0,0,0-24,24V56A24,24,0,0,1,72,32Z" opacity="0.2"></path>
-                                            <path d="M208,24H72A32,32,0,0,0,40,56V224a8,8,0,0,0,8,8H192a8,8,0,0,0,0-16H56a16,16,0,0,1,16-16H208a8,8,0,0,0,8-8V32A8,8,0,0,0,208,24Zm-8,160H72a31.82,31.82,0,0,0-16,4.29V56A16,16,0,0,1,72,40H200Z"></path>
-                                          </svg>
-                                          <span>Project X</span>
-                                        </div>
-                                    
-                                        <!-- Foreground visible content -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
-                                          <path d="M226.76,69a8,8,0,0,0-12.84-2.88l-40.3,37.19-17.23-3.7-3.7-17.23,37.19-40.3A8,8,0,0,0,187,29.24,72,72,0,0,0,88,96,72.34,72.34,0,0,0,94,124.94L33.79,177c-.15.12-.29.26-.43.39a32,32,0,0,0,45.26,45.26c.13-.13.27-.28.39-.42L131.06,162A72,72,0,0,0,232,96,71.56,71.56,0,0,0,226.76,69ZM160,152a56.14,56.14,0,0,1-27.07-7,8,8,0,0,0-9.92,1.77L67.11,211.51a16,16,0,0,1-22.62-22.62L109.18,133a8,8,0,0,0,1.77-9.93,56,56,0,0,1,58.36-82.31l-31.2,33.81a8,8,0,0,0-1.94,7.1L141.83,108a8,8,0,0,0,6.14,6.14l26.35,5.66a8,8,0,0,0,7.1-1.94l33.81-31.2A56.06,56.06,0,0,1,160,152Z"></path>
-                                        </svg>
-                                        <span>Under construction...</span>
-                                      </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12">
-                                    <div class="logos">
-                                        <div class="logo_items">
-                                            <img src="assets/images/animated-slider/css.png">
-                                            <img src="assets/images/animated-slider/html.png">
-                                            <img src="assets/images/animated-slider/jquery.png">
-                                            <img src="assets/images/animated-slider/nextjs.png">
-                                            <img src="assets/images/animated-slider/react.png">
-                                            <img src="assets/images/animated-slider/wordpress.png">
-                                            
-                                        </div>
-                                        <div class="logo_items">
-                                            <img src="assets/images/animated-slider/css.png">
-                                            <img src="assets/images/animated-slider/html.png">
-                                            <img src="assets/images/animated-slider/jquery.png">
-                                            <img src="assets/images/animated-slider/nextjs.png">
-                                            <img src="assets/images/animated-slider/react.png">
-                                            <img src="assets/images/animated-slider/wordpress.png">    
-                                        </div>
+                                <div class="skeleton-link">
+                                    <ul class="blog-link">
+                                    <li class="skeleton skeleton-title"></li>
+                                    <li class="skeleton skeleton-description"></li>
+                                    <li class="skeleton skeleton-date"></li>
+                                    </ul>
+                                </div>
+                                </div>
+
+                                <!-- ... Repeat until you have 8 skeleton blocks ... -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                    <!-- Blog Modal -->
+                    <div class="modal fade blog-modal" tabindex="-1" role="dialog" aria-labelledby="Blog-view" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered va-modal-body" role="document">
+                        <div class="va-modal-container modal-content p-3">  
+                            <div class="row g-1">
+                                <div class="col-lg-2 col-md-12">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <!-- Attachments (top right) -->
+                                    <div class="modal-attachments top-right" id="modal-attachments">
+                                        <!-- JS will populate this -->
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="logos-reverse">
-                                        <div class="logo_items">
-                                            <img src="assets/images/animated-slider/css.png">
-                                            <img src="assets/images/animated-slider/html.png">
-                                            <img src="assets/images/animated-slider/jquery.png">
-                                            <img src="assets/images/animated-slider/nextjs.png">
-                                            <img src="assets/images/animated-slider/react.png">
-                                            <img src="assets/images/animated-slider/wordpress.png">
-                                            
-                                        </div>
-                                        <div class="logo_items">
-                                            <img src="assets/images/animated-slider/css.png">
-                                            <img src="assets/images/animated-slider/html.png">
-                                            <img src="assets/images/animated-slider/jquery.png">
-                                            <img src="assets/images/animated-slider/nextjs.png">
-                                            <img src="assets/images/animated-slider/react.png">
-                                            <img src="assets/images/animated-slider/wordpress.png">    
-                                        </div>
+                                <div class="col-lg-10 col-md-12">
+                                    <!-- Modal Header -->
+                                    <div class="va-modal-header">
+                                        <h5 class="modal-title" id="modalTitle">Blog Title</h5>
                                     </div>
+            
+                                    <!-- Modal Body -->
+                                    <div class="va-modal-body">
+                                    <div id="modalDescription">
+                                        <p>This is the description of the blog...</p>
+                                    </div>
+                                    </div>
+            
+                                    <!-- Attachments (optional bottom right if needed) -->
+                                    <!-- 
+                                    <div class="modal-footer border-0 justify-content-end">
+                                    <div class="modal-attachments" id="modal-attachments-bottom">
+                                        <a href="#" class="btn btn-sm btn-outline-secondary" download>Attachment.pdf</a>
+                                    </div>
+                                    </div>
+                                    -->
+                                </div>
+                            </div>      
+                            
+                        </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="copyright">
+                                <p>© 2025 Valk7am. All rights reserved.</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="va-footer-links-container">
+                                <div class="va-footer-link-item">
+                                    <a href="#" class="va-footer-link"> RSS <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg></a>
+                                </div>
+                                <div class="va-footer-link-item">
+                                    <a href="#" class="va-footer-link"> Sitemap <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg></a>
+                                </div>
+                                <div class="va-footer-link-item">
+                                    <a href="#" class="va-footer-link"> Github <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg> </a>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                </div>
-                <br><br><br><br>
-                <div class="row g-3">
-                    <div class="col-lg-8 col-md-12">
-                        <div class="introduction-text">
-                            <p>
-                                ⚔️ <strong>valk7am – Full-Stack Developer</strong><br>
-                                <em>Welcome, traveler. You've reached the ground.</em>
-                              </p>
-                            
-                              <p>
-                                I'm <strong>valk7am</strong> — a full-stack developer, problem-solver, and early riser.
-                                The name blends <em>valkyrie</em> and <em>7AM</em> — because I like to start strong and stay sharp.
-                                Wings, sword, shield — that's how I approach code: with focus, balance, and a bit of fight.
-                              </p>
-                            
-                              <p>
-                                Professionally, I work across stacks driven by project demands — from backend scripting with
-                                Python, to building with WordPress, and styling with
-                                Bootstrap. I’m gearing up to dive into Tailwind CSS and
-                                Next.js as my next front-end frontier. I’m also starting to explore
-                                Jira Service Management more deeply, leveling up in team ops and structured workflows.
-                              </p>
-                            
-                              <p>
-                                This space is where I document my journey — from
-                                <a href="#projects">projects I’ve built
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-                                </a>, to
-                                <a href="#blog">insights I’m picking up
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-                                </a>, and even quick notes in my
-                                <a href="#til">“Today I Learned” log
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-                                </a>. If you're curious about my background or values,
-                                feel free to <a href="#about">read more about me
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-                                </a>.
-                              </p>
-                            
-                              <p>
-                                I hope you find something useful here — and if you’ve got an idea, question, or a worthy challenge,
-                                I’m always open to collaborate.
-                              </p>
-                            
-                              <p><strong>Let’s build.</strong></p>
-                        </div>
-                      </div>
-                    <!-- <div class="col-lg-4 col-md-12">
-                    
-                    </div> -->
-                </div>
-            </div>
-        </section>
-        <section id="Projects" class="col-lg-12 col-md-12">
-        <div clas="container">
-            <h1>
-                Soon
-            </h1>
-        </div>
-        </section>
-        <section id="About" class="col-lg-12 col-md-12">
-        <div clas="container">
-            <div class="row g-1">
-                <div class="col-12 col-lg-8">
-                    <div class="about-abstract">
-                        <h1>ABOUT ME</h1>
-                    
-                        <p>I'm <strong>Mahmoud Abuhassan</strong>, a <strong>Full Stack Developer</strong> originally from <strong>Palestine</strong>, currently based in <strong>Doha, Qatar</strong>, and working as a <strong>Software Engineer</strong> at <strong>Al Jazeera Media Network</strong>.</p>
-                    
-                        <p>I work across the full development stack — from configuring <strong>Apache2</strong> servers and managing backend systems, to crafting custom front-end experiences in <strong>WordPress</strong> and building backend services using <strong>Python</strong> with <strong>Flask</strong>. I've also developed complete projects using Flask, taking full ownership from backend to frontend.</p>
-                    
-                        <p>I prefer using <strong>pure HTML, CSS, and JavaScript</strong> when possible, believing that the simplest solution is often the best. I'm also experienced with <strong>React</strong>, <strong>React Native</strong>, <strong>Expo</strong>, <strong>Bootstrap</strong>, and <strong>jQuery</strong>, and I'm currently exploring <strong>Next.js</strong> and <strong>Tailwind CSS</strong> to keep up with modern development trends.</p>
-                    
-                        <p>On the backend, I'm well-established in <strong>API and REST API development</strong>, with hands-on experience in <strong>Java</strong>, <strong>PHP</strong>, <strong>MongoDB</strong>, <strong>Firebase</strong>, <strong>SQL</strong>, and <strong>PostgreSQL</strong>, all within <strong>Linux-based environments</strong>.</p>
-                    
-                        <p>I've worked with headless CMS platforms like <strong>Contentful</strong>, and I'm currently exploring open-source solutions such as <strong>Ghost</strong> and similar systems to broaden my content architecture skills.</p>
-                    
-                        <p>I'm a <strong>native Arabic speaker</strong> and <strong>fluent in English</strong>, bringing cultural awareness and strong communication to every team I join. Outside of work, I enjoy <strong>technical video games</strong> that challenge my creativity and logic — much like the systems I build every day.</p>
-                    </div>                        
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div>
-                        <img width="100%" src="assets/images/valk7amLogo.png" />
-                    </div>
-                </div>
-                
-                <div class="col-12">
-                    <div class="experience">
-                        <hr>
-                        <div class="row g-2">
-                            <div class="col-12 col-lg-3 col-md-3">
-                                <div class="sticky-title">
-                                    <h1>
-                                        EXPERIANCE
-                                    </h1>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-9 col-md-9">         
-                                <ul class="content-list">
-                                    <li>
-                                        <h4>
-                                           <strong>Software Engineer</strong> At <a target="_blank" href="https://aljazeera.net">Al Jazeera Media Network
-                                                <svg xmlns="http://www.w3.org/2000/svg" width=".8em" height=".8em" fill="rgb(233, 223, 10)" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-                                            </a> 
-                                        </h4>
-                                        <span>5 Jul, 2023</span> > NOW
-                                        <br><br>
-                                    </li>
-                                    <li>
-                                        <h4>
-                                           <strong>IT Teacher</strong> At <a target="_blank" href="https://aljazeera.net">Ministry Of Education
-                                                <svg xmlns="http://www.w3.org/2000/svg" width=".8em" height=".8em" fill="rgb(233, 223, 10)" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
-                                            </a> 
-                                        </h4>
-                                        <span>12 Jun, 2022</span> > 28 Aug, 2023
-                                        <br><br>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-12">
-                    <div class="education">
-                        <hr>
-                        <div class="row g-2">
-                            <div class="col-12 col-lg-3 col-md-3">
-                                <div class="sticky-title">
-                                    <h1>
-                                        EDUCATION
-                                    </h1>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-9 col-md-9">         
-                                <ul class="content-list">
-                                    <li>
-                                        <h4>
-                                            Software Engineer <span>15 jun, 2025</span>
-                                        </h4>
-                                        <p>Al Jazeera Media Network </p>
-                                    </li>
-                                    <li>
-                                        <h4>
-                                            Ministry Of Education <span>5 may, 2025</span>
-                                        </h4>
-                                        <p>IT Teacher</p>
-                                    </li>
-                                    <li>
-                                        <h4>
-                                            Al Jazeera Media Network <span>15 jun, 2025</span>
-                                        </h4>
-                                        <p>Software Engineer</p>
-                                    </li>
-                                    <li>
-                                        <h4>
-                                            Al Jazeera Media Network <span>15 jun, 2025</span>
-                                        </h4>
-                                        <p>Software Engineer</p>
-                                    </li>
-                                    <li>
-                                        <h4>
-                                            Al Jazeera Media Network <span>15 jun, 2025</span>
-                                        </h4>
-                                        <p>Software Engineer</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                </footer>
             </div>
         </div>
-        </section>
-        <section id="Blogs" class="col-lg-12 col-md-12">
-            <div class="blog-container">
-                <h1>
-                    My journey
-                </h1>
-                <div id="table-container">
-                    <div class="row g-2">
-                        <!-- Skeleton item x8 -->
-                        <!-- Repeat this block 8 times -->
-                        <div class="col-lg-12 col-md-12">
-                          <div class="skeleton-link">
-                            <ul class="blog-link">
-                              <li class="skeleton skeleton-title"></li>
-                              <li class="skeleton skeleton-description"></li>
-                              <li class="skeleton skeleton-date"></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12">
-                          <div class="skeleton-link">
-                            <ul class="blog-link">
-                              <li class="skeleton skeleton-title"></li>
-                              <li class="skeleton skeleton-description"></li>
-                              <li class="skeleton skeleton-date"></li>
-                            </ul>
-                          </div>
-                        </div>
 
-                        <!-- ... Repeat until you have 8 skeleton blocks ... -->
-                      </div>
-                </div>
-            </div>
-        </section>
-        <section id="Socials" class="col-lg-12 col-md-12">
-        <div clas="container">
-            <h1>
-                Soon
-            </h1>
-        </div>
-        </section>
-            <!-- Blog Modal -->
-            <div class="modal fade blog-modal" tabindex="-1" role="dialog" aria-labelledby="Blog-view" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered va-modal-body" role="document">
-                <div class="va-modal-container modal-content p-3">  
-                    <div class="row g-1">
-                        <div class="col-lg-2 col-md-12">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            <!-- Attachments (top right) -->
-                            <div class="modal-attachments top-right" id="modal-attachments">
-                                <!-- JS will populate this -->
-                            </div>
-                        </div>
-                        <div class="col-lg-10 col-md-12">
-                            <!-- Modal Header -->
-                            <div class="va-modal-header">
-                                <h5 class="modal-title" id="modalTitle">Blog Title</h5>
-                            </div>
-    
-                            <!-- Modal Body -->
-                            <div class="va-modal-body">
-                            <div id="modalDescription">
-                                <p>This is the description of the blog...</p>
-                            </div>
-                            </div>
-    
-                            <!-- Attachments (optional bottom right if needed) -->
-                            <!-- 
-                            <div class="modal-footer border-0 justify-content-end">
-                            <div class="modal-attachments" id="modal-attachments-bottom">
-                                <a href="#" class="btn btn-sm btn-outline-secondary" download>Attachment.pdf</a>
-                            </div>
-                            </div>
-                            -->
-                        </div>
-                    </div>      
-                    
-                </div>
-                </div>
-            </div>
-  
-        </main>
-
-        <footer class="container">
-            <div class="row">
-                <div class="col-6">
-                    <div class="copyright">
-                        <p>© 2025 Valk7am. All rights reserved.</p>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="va-footer-links-container">
-                        <div class="va-footer-link-item">
-                            <a href="#" class="va-footer-link"> RSS <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg></a>
-                        </div>
-                        <div class="va-footer-link-item">
-                            <a href="#" class="va-footer-link"> Sitemap <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg></a>
-                        </div>
-                        <div class="va-footer-link-item">
-                            <a href="#" class="va-footer-link"> Github <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="text-xs"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-          
-
-  </div>
-  </div>
-
-    <script src="./assets/jquery.js"></script>
-    <script src="./assets/bootstrap.js"></script>
-    <script src="./assets/libraries/paganation.js"></script>
-    <script src="./assets/libraries/gsap/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="./assets/animation.js"></script>
-    <script src="./assets/request.js"></script>
-    <script src="./assets/js.js"></script>
-
-
-</body>
+        <script src="./assets/jquery.js"></script>
+        <script src="./assets/bootstrap.js"></script>
+        <script src="./assets/libraries/paganation.js"></script>
+        <script src="./assets/libraries/gsap/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="./assets/animation.js"></script>
+        <script src="./assets/request.js"></script>
+        <script src="./assets/js.js"></script>
+    </body>
 </html>
