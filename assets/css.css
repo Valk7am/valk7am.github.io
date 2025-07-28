@@ -55,6 +55,7 @@
     /* background-color:rgb(37, 37, 37); */
     overflow: hidden;
     border-radius: 5px;
+    margin-top:20px;
   }
   .show{
     display: block;
@@ -166,8 +167,8 @@ html[dir="rtl"] .profileImg img{
 .navigation ul li{
   text-decoration: none;
   list-style-type: none;
-  padding-left:10px;
-  padding-right:10px;
+  padding-left:15px;
+  padding-right:15px;
   height: 100%;
 }
 .navigation ul li a{
@@ -666,6 +667,16 @@ kbd{
   height: 25px;
 }
 
+.introduction-text{
+  font-size: 18px;
+}
+.introduction-text .title{
+  font-size: 22px;
+}
+.introduction-text .sub-title{
+  font-size: 20px;
+}
+
 /* extras */
 
 .stars {
@@ -907,7 +918,6 @@ html[lang="ar"] .va-footer-link-item {
   display: block;
   transform: translateY(0);
   transition: transform 4s ease;
-  filter: blur(10px);
 }
 .showcase_card.scollonHover:hover img {
   transform: translateY(-50%); 
