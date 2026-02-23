@@ -848,10 +848,11 @@ html[lang="ar"] .va-footer-link-item {
 .skeleton-date {
   height: 12px;
   width: 150px;
+  transform: scale(2);
 }
 
 .about-abstract,.experience,.education{
-  padding: 0 0.75em;
+  padding: 20px 0.75em;
 }
 .about-abstract p{
   font-size: 18px;
@@ -876,7 +877,7 @@ html[lang="ar"] .va-footer-link-item {
 .experience ul{
   list-style: none;
 }
-.experience h4{
+.experience h4, .education h4, .skills h4 {
   font-weight: 200;
 
 }
