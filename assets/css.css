@@ -48,7 +48,6 @@
   main{
     /* background-color:blue; */
     padding-top:160px;
-
   }
   section{
     /* display: none; */
@@ -106,25 +105,62 @@
 }
 
 /* Header */
+/* Header
+   backdrop-filter must live on the element that is itself the fixed/
+   positioned ancestor — otherwise its parent stacking context is empty
+   (containing only the fixed header) and the blur has nothing to sample.
+   So <header> IS the visible pill, and the inner Bootstrap .container is
+   stripped of its width so it doesn't shrink the pill area. */
 header{
   position: fixed;
-  z-index:1000;
-  width: 100%;
-  top:50px;
+  z-index: 1000;
+  top: 18px;
   left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: calc(100% - 2rem);
+  max-width: 100%;
+  border-radius: 12px;
+  background-color: rgba(20, 20, 20, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+/* Match Bootstrap .container responsive max-widths so the pill aligns
+   exactly with the page content */
+@media (min-width: 576px)  { header { max-width: 540px;  } }
+@media (min-width: 768px)  { header { max-width: 720px;  } }
+@media (min-width: 992px)  { header { max-width: 960px;  } }
+@media (min-width: 1200px) { header { max-width: 1140px; } }
+@media (min-width: 1400px) { header { max-width: 1320px; } }
+/* Normalise the Bootstrap .container wrapper so it doesn't add another
+   width constraint inside the pill */
+header > .container{
+  max-width: none;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 .header-container{
-  margin:0 0.75rem;
+  position: relative;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: rgba(56, 56, 56,0.4);
-  border-radius:10px;
-  backdrop-filter: blur(10px); 
-  border:2px solid rgba(255, 255, 255, 0.05);
+  background-color: transparent;
+  border: 0;
+  border-radius: inherit;
+  box-shadow: none;
+}
+/* Safari / browsers that don't support backdrop-filter:
+   fall back to a heavier opaque tint so text stays readable */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))){
+  header{
+    background-color: rgba(20, 20, 20, 0.92);
+  }
 }
 .header-topside{
   position: relative;
-  background: #333;
+  background: transparent;
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -161,30 +197,38 @@ html[dir="rtl"] .profileImg img{
 .navigation ul{
   display:flex;
   align-items: center;
+  gap: 4px;
   padding:0;
   margin:0;
+  list-style: none;
 }
 .navigation ul li{
-  text-decoration: none;
+  display: flex;
+  align-items: center;
   list-style-type: none;
-  padding-left:15px;
-  padding-right:15px;
-  height: 100%;
 }
 .navigation ul li a{
-  transition: all 0.1s ease;
-  height: 100%;
-  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 0;
+  font-weight: 500;
+  color: #e7e7e7;
+  text-decoration: none;
+  background: transparent;
+  transition: color .15s ease;
 }
-.navigation ul li a:hover{
-  padding: 0;
-  margin:0;
-  font-weight: 400;
+.navigation ul li a:hover,
+.navigation ul li a:focus-visible{
   color: rgb(var(--accent-color));
+  background: transparent;
 }
 .navigation ul li a.active{
   color: rgb(var(--accent-color));
-  font-weight: 800;
+  background: transparent;
+  font-weight: 500; /* keep weight constant so width never shifts */
+  box-shadow: none;
 }
 .action-menu{
   position: absolute;
@@ -343,17 +387,24 @@ kbd{
 }
 @media screen and (max-width: 992px){
   .navigation ul{
-    align-items: start;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
   }
   .navigation ul li{
-    padding:10px 0px;
     width: 100%;
   }
   .navigation ul li a{
-    display: block;
-  }
-  .search-button{
     width: 100%;
+    height: 44px;
+    padding: 0 12px;
+  }
+  .navigation ul li a.active{
+    box-shadow: none;
+  }
+  .search-trigger{
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 
@@ -631,40 +682,54 @@ kbd{
   overflow: hidden;
   white-space: nowrap;
   position: relative;
-  display: flex;
   height: 40px;
-  align-items: center;
-  -webkit-mask-image: linear-gradient(to right, transparent, white, transparent);
-  mask-image: linear-gradient(to right, transparent, white, transparent);
+  line-height: 40px;
+  -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+          mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
 }
 
 .logos:before, .logos:after {
   position: absolute;
   top: 0;
   content: '';
-  width: 250px;
+  width: 80px;
   height: 100%;
   z-index: 2;
+  pointer-events: none;
 }
+.logos:before{ left: 0; }
+.logos:after{ right: 0; }
 
-.logos .logo_items {
+.logos .logo_items,
+.logos-reverse .logo_items {
   display: inline-block;
-  animation: 35s slides infinite linear;
+  width: max-content;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-right: 30px; /* gap between repeated sets */
+}
+.logos .logo_items {
+  animation: slides 35s linear infinite;
 }
 .logos-reverse .logo_items{
-  display: inline-block;
-  animation: 35s slides-reverse infinite linear;
+  animation: slides-reverse 35s linear infinite;
 }
 
-.logos-reverse:hover .logo_items {
-  animation-play-state: paused;
-}
+.logos-reverse:hover .logo_items,
 .logos:hover .logo_items {
   animation-play-state: paused;
 }
 
 .logo_items img{
   height: 25px;
+  width: auto;
+  margin: 0 6px;
+  vertical-align: middle;
+  filter: brightness(0) invert(1) opacity(0.6);
+  transition: filter .2s ease;
+}
+.logo_items img:hover{
+  filter: none;
 }
 
 .introduction-text{
@@ -680,9 +745,15 @@ kbd{
 /* extras */
 
 .stars {
-  position: absolute;
-  z-index: -1;
+  /* Use position:fixed (not absolute) + no z-index so stars sit in the
+     normal painting layer behind everything via DOM order alone.
+     Any explicit z-index here (positive OR negative) promotes .stars to its
+     own composited layer which silently disables backdrop-filter on any
+     fixed element above it (Chromium compositor optimisation). */
+  position: fixed;
   pointer-events: none;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -775,25 +846,39 @@ footer{
 .va-footer-links-container {
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0;
 }
 .va-footer-link-item {
-  border-right: 1px solid black; 
-  max-width:300px;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  max-width: 300px;
 }
 html[lang="ar"] .va-footer-link-item {
   border-right: none;
-  border-left: 1px solid black; 
+  border-left: 1px solid rgba(255,255,255,0.15);
 }
 .va-footer-link-item:last-child {
-  border: none; 
+  border: none;
 }
 .va-footer-link {
-  font-size:18px;
-  margin:5px;
-  padding: 10px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0;
+  padding: 6px 14px;
   text-decoration: none;
-  color: inherit; 
+  color: #cdcdcd;
+  border-radius: 6px;
+  transition: color .15s ease, background-color .15s ease;
+}
+.va-footer-link:hover,
+.va-footer-link:focus-visible {
+  color: rgb(var(--accent-color));
+  background-color: rgba(255,255,255,0.05);
+}
+@media (max-width: 576px){
+  .va-footer-links-container{ justify-content: flex-start; }
+  .va-footer-link{ font-size: 14px; padding: 4px 10px; }
 }
 .va-modal-body{
   max-width: 90vw;
@@ -1104,5 +1189,459 @@ html[lang="ar"] .va-footer-link-item {
   40% {
     opacity: 0.7;
     transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   Improvements & additions (a11y, SEO, Spotlight, multipage)
+   ========================================================= */
+
+/* Skip to content for keyboard users */
+.skip-link{
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 10000;
+  background: rgb(var(--accent-color));
+  color: #111;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: top .2s ease;
+}
+.skip-link:focus{
+  top: 8px;
+  color: #111;
+  outline: 2px solid #fff;
+}
+
+/* Visible focus styles for keyboard users */
+:focus-visible{
+  outline: 2px solid rgb(var(--accent-color));
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+button:focus-visible,
+a:focus-visible{
+  outline-offset: 4px;
+}
+
+/* Make decorative images render correctly */
+img{ max-width: 100%; height: auto; }
+
+/* Construction banner (hidden — kept in markup for future use) */
+.site-banner{
+  display: none !important;
+}
+.site-banner-legacy{
+  background-color: #000;
+  color: #cdcdcd;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  z-index: 1100;
+  padding: 6px 12px;
+}
+.site-banner button{
+  background: transparent;
+  border: 0;
+  color: inherit;
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Search trigger button in nav */
+.search-trigger{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.04);
+  color: #cdcdcd;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.search-trigger:hover{
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(var(--accent-color),0.6);
+  color: #fff;
+}
+.search-trigger .search-trigger-kbd{
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  border: 1px solid rgba(255,255,255,0.15);
+  margin: 0;
+}
+
+/* =========================================================
+   Spotlight search modal
+   ========================================================= */
+.spotlight{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s ease;
+}
+.spotlight[aria-hidden="false"]{
+  opacity: 1;
+  pointer-events: auto;
+}
+.spotlight-panel{
+  width: min(640px, 92vw);
+  background: rgba(30, 30, 30, 0.95);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  overflow: hidden;
+  transform: translateY(-10px);
+  transition: transform .2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Tajawal", system-ui, sans-serif;
+}
+.spotlight[aria-hidden="false"] .spotlight-panel{
+  transform: translateY(0);
+}
+.spotlight-input-wrap{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.spotlight-input-wrap svg{
+  flex: 0 0 auto;
+  opacity: 0.7;
+}
+.spotlight-input{
+  flex: 1;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  font-family: inherit;
+}
+.spotlight-input::placeholder{ color: rgba(255,255,255,0.45); }
+.spotlight-esc{
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #ddd;
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  cursor: pointer;
+}
+.spotlight-results{
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.spotlight-group-label{
+  padding: 10px 16px 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.45);
+}
+.spotlight-result{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  margin: 0 8px;
+  border-radius: 8px;
+  color: #eee;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .12s ease, color .12s ease;
+}
+.spotlight-result.is-active,
+.spotlight-result:hover{
+  background: rgba(var(--accent-color),0.18);
+  color: #fff;
+}
+.spotlight-result .sr-icon{
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: rgba(255,255,255,0.06);
+  color: rgb(var(--accent-color));
+}
+.spotlight-result .sr-text{
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+.spotlight-result .sr-title{
+  font-size: 15px;
+  line-height: 1.2;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.spotlight-result .sr-subtitle{
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.spotlight-result .sr-tag{
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  flex: 0 0 auto;
+}
+.spotlight-empty{
+  padding: 24px 16px;
+  text-align: center;
+  color: rgba(255,255,255,0.55);
+  font-size: 14px;
+}
+.spotlight-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.25);
+}
+.spotlight-footer kbd{
+  background: rgba(255,255,255,0.10);
+  color: #ddd;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  margin: 0 3px;
+}
+.spotlight-result mark{
+  background: transparent;
+  color: rgb(var(--accent-color));
+  font-weight: 700;
+  padding: 0;
+}
+
+/* Multipage helpers */
+section{ display: block; }
+.page-section h1{
+  font-size: 36px;
+  margin: 30px 0 20px;
+}
+
+/* Make sure nav active state works for static pages
+   (kept in sync with .navigation ul li a.active above — text-only highlight) */
+body[data-page="overview"] [data-nav="overview"],
+body[data-page="about"]    [data-nav="about"],
+body[data-page="projects"] [data-nav="projects"],
+body[data-page="blogs"]    [data-nav="blogs"]{
+  color: rgb(var(--accent-color));
+  background: transparent;
+  box-shadow: none;
+}
+@media (max-width: 992px){
+  body[data-page="overview"] [data-nav="overview"],
+  body[data-page="about"]    [data-nav="about"],
+  body[data-page="projects"] [data-nav="projects"],
+  body[data-page="blogs"]    [data-nav="blogs"]{
+    box-shadow: none;
+  }
+}
+
+/* Smaller hero on mobile */
+@media (max-width: 768px){
+  .hero-name{ font-size: 32px; }
+  .hero-title p,
+  .changebox span{ font-size: 24px; }
+  main{ padding-top: 130px; }
+}
+@media (max-width: 576px){
+  .header-container{ margin: 0 0.5rem; padding: 0 0.5rem; }
+  .navbar-brand{ font-size: 30px; }
+  .page-section h1{ font-size: 28px; }
+}
+
+/* Reduced motion: turn off heavy animations */
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .star,
+  .logos .logo_items,
+  .logos-reverse .logo_items,
+  .changebox span,
+  .AI,
+  .AI-letter,
+  #bounce, #bounce2, #particles, #animatedStop{
+    animation: none !important;
+  }
+}
+
+/* 404 page */
+.page-404{
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 12px;
+}
+.page-404 h1{ font-size: 80px; margin: 0; color: rgb(var(--accent-color)); }
+.page-404 p{ font-size: 18px; max-width: 480px; }
+
+/* Sitemap page */
+.sitemap-intro{
+  color: #cdcdcd;
+  margin: 0 0 24px;
+  font-size: 16px;
+}
+.sitemap-grid > div > section{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 18px 20px;
+  height: 100%;
+}
+.sitemap-grid h2{
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: rgb(var(--accent-color));
+}
+.sitemap-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sitemap-list li{
+  padding: 4px 0;
+}
+.sitemap-list li small{
+  opacity: .6;
+  font-size: .8em;
+  margin-left: 6px;
+}
+.sitemap-list a{
+  color: #e7e7e7;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+.sitemap-list a:hover,
+.sitemap-list a:focus-visible{
+  color: rgb(var(--accent-color));
+  border-bottom-color: rgb(var(--accent-color));
+}
+.sitemap-feeds{
+  margin-top: 14px;
+  font-size: 14px;
+  color: #cdcdcd;
+}
+.sitemap-feeds a{
+  color: rgb(var(--accent-color));
+  text-decoration: none;
+}
+.sitemap-feeds a:hover{ text-decoration: underline; }
+
+/* =========================================================
+   Cross-document page transitions (View Transitions API)
+   Progressive enhancement: browsers without support just navigate normally.
+   ========================================================= */
+@view-transition {
+  navigation: auto;
+}
+
+/* Default fade + lift for the whole document */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  animation-name: va-page-out;
+}
+::view-transition-new(root) {
+  animation-name: va-page-in;
+}
+
+@keyframes va-page-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(-8px) scale(0.995); }
+}
+@keyframes va-page-in {
+  from { opacity: 0; transform: translateY(10px) scale(1.005); filter: blur(4px); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);     filter: blur(0); }
+}
+
+/* Persistent shell elements — header, footer and the floating notice
+   keep their identity across navigations, so they don't fade with the page. */
+header       { view-transition-name: va-header; }
+footer       { view-transition-name: va-footer; }
+.site-banner { view-transition-name: va-notice; }
+
+/* The persistent shell elements get a softer, snappier cross-fade
+   (no translate) so they feel stable while the main content swaps. */
+::view-transition-old(va-header),
+::view-transition-new(va-header),
+::view-transition-old(va-footer),
+::view-transition-new(va-footer),
+::view-transition-old(va-notice),
+::view-transition-new(va-notice) {
+  animation-duration: 220ms;
+  animation-timing-function: ease-out;
+}
+
+/* Respect reduced motion — instant cross-fade only */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  ::view-transition-old(va-header),
+  ::view-transition-new(va-header),
+  ::view-transition-old(va-footer),
+  ::view-transition-new(va-footer),
+  ::view-transition-old(va-notice),
+  ::view-transition-new(va-notice) {
+    animation-duration: 1ms !important;
+    animation-name: none !important;
   }
 }
