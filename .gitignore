@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node / build (in case you add a build later)
+node_modules/
+dist/
+.cache/
+
+# Logs
+*.log
