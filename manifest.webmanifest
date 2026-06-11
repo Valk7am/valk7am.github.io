@@ -1,0 +1,14 @@
+{
+  "name": "valk7am — Mahmoud Abuhassan",
+  "short_name": "valk7am",
+  "description": "Mahmoud Abuhassan — Full-Stack Developer based in Doha, Qatar.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#0d0d0d",
+  "icons": [
+    { "src": "assets/images/icon.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/images/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
