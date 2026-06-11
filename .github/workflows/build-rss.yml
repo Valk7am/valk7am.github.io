@@ -1,0 +1,50 @@
+name: Rebuild RSS + Sitemap
+
+on:
+  schedule:
+    # Daily at 06:00 UTC
+    - cron: '0 6 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build-rss.mjs'
+      - '.github/workflows/build-rss.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-rss
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build feed.xml and sitemap.xml
+        env:
+          # Optional: set as repo secrets if you want to override the public token in scripts/build-rss.mjs
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          CONTENTFUL_ENV_ID: ${{ secrets.CONTENTFUL_ENV_ID }}
+          CONTENTFUL_CDA_TOKEN: ${{ secrets.CONTENTFUL_CDA_TOKEN }}
+          SITE_URL: https://valk7am.github.io
+        run: node scripts/build-rss.mjs
+
+      - name: Commit changes if any
+        run: |
+          if [[ -n "$(git status --porcelain feed.xml sitemap.xml)" ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add feed.xml sitemap.xml
+            git commit -m "chore(feed): rebuild feed.xml and sitemap.xml [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi

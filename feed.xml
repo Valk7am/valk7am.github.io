@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>valk7am — Mahmoud Abuhassan</title>
+    <link>https://valk7am.github.io/</link>
+    <atom:link href="https://valk7am.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Articles, notes, and Today I Learned posts by Mahmoud Abuhassan.</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 10 Jun 2026 13:35:50 GMT</lastBuildDate>
+    <pubDate>Wed, 10 Jun 2026 13:35:50 GMT</pubDate>
+    <generator>scripts/build-rss.mjs</generator>
+    <image>
+      <url>https://valk7am.github.io/assets/images/icon.png</url>
+      <title>valk7am — Mahmoud Abuhassan</title>
+      <link>https://valk7am.github.io/</link>
+    </image>
+
+  </channel>
+</rss>
