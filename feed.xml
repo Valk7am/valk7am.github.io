@@ -6,8 +6,8 @@
     <atom:link href="https://valk7am.github.io/feed.xml" rel="self" type="application/rss+xml" />
     <description>Articles, notes, and Today I Learned posts by Mahmoud Abuhassan.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Aug 2026 07:26:43 GMT</lastBuildDate>
-    <pubDate>Mon, 10 Aug 2026 07:26:43 GMT</pubDate>
+    <lastBuildDate>Tue, 11 Aug 2026 07:01:40 GMT</lastBuildDate>
+    <pubDate>Tue, 11 Aug 2026 07:01:40 GMT</pubDate>
     <generator>scripts/build-rss.mjs</generator>
     <image>
       <url>https://valk7am.github.io/assets/images/icon.png</url>
